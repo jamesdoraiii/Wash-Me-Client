@@ -1,0 +1,10 @@
+<h1> Search for a Detailer in Your Area </h1>
+
+<div *ngIf = "status == 'search'">
+<app-detailer-search-form></app-detailer-search-form>
+</div>
+
+
+<div *ngIf = "status == 'results'">
+<app-detailer-search-results></app-detailer-search-results>
+</div>

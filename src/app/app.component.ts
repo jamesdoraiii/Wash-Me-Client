@@ -7,14 +7,15 @@ import { SplashScreenBaseComponent } from './screens/splash/splash-screen-base/s
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  signedin = false;
+  token = '';
   title = 'wash-me-material-client';
 
   receiveLoginInfo($event) {
-    this.signedin = $event
+    this.token = $event
   }
 
   logout() {
-    this.signedin = false;
+    this.token = '';
+    window.localStorage.clear();
   }
 }

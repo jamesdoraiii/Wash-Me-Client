@@ -34,17 +34,6 @@
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
     <!--Branding-->
@@ -126,11 +115,11 @@
 
     <div class="login">
       <mat-form-field>
-        <input [(ngModel)]="loginInfo.username" matInput placeholder="Username">
+        <input [(ngModel)]="loginInfo.user.username" matInput placeholder="Username">
       </mat-form-field>
 
       <mat-form-field>
-        <input [(ngModel)]="loginInfo.password" matInput placeholder="Password" type="password">
+        <input [(ngModel)]="loginInfo.user.pass" matInput placeholder="Password" type="password">
       </mat-form-field>
 
       <button class="btn" mat-raised-button (click)="sendLogin()">Submit</button>
@@ -148,11 +137,11 @@
 
     <div class="signup">
       <mat-form-field>
-        <input [(ngModel)]="signUpInfo.username" matInput placeholder="Username">
+        <input [(ngModel)]="signUpInfo.user.username" matInput placeholder="Username">
       </mat-form-field>
 
       <mat-form-field>
-        <input [(ngModel)]="signUpInfo.password" matInput placeholder="Password" type="password">
+        <input [(ngModel)]="signUpInfo.user.pass" matInput placeholder="Password" type="password">
       </mat-form-field>
 
       <mat-form-field>
@@ -160,15 +149,15 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input [(ngModel)]="signUpInfo.emailAddress" matInput placeholder="Email Address">
+        <input [(ngModel)]="signUpInfo.user.emailAddress" matInput placeholder="Email Address">
       </mat-form-field>
 
       <mat-form-field>
-        <input [(ngModel)]="signUpInfo.fName" matInput placeholder="First Name">
+        <input [(ngModel)]="signUpInfo.user.fName" matInput placeholder="First Name">
       </mat-form-field>
 
       <mat-form-field>
-        <input [(ngModel)]="signUpInfo.lName" matInput placeholder="Last Name">
+        <input [(ngModel)]="signUpInfo.user.lName" matInput placeholder="Last Name">
       </mat-form-field>
 
 

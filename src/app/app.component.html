@@ -1,3 +1,4 @@
+
 <app-splash-screen-base (messageEvent)="receiveLoginInfo($event)" *ngIf = "token === ''"></app-splash-screen-base>
 
 <div *ngIf = "token != ''">
@@ -11,7 +12,6 @@
       </mat-toolbar-row>
     </mat-toolbar>
 
- 
 
   <router-outlet></router-outlet>
 </div>

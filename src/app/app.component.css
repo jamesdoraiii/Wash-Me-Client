@@ -2,3 +2,9 @@ body {
     padding: 0;
     margin: 0;
 }
+
+mat-toolbar {
+    background-color: rgb(251, 240, 87) !important;
+    font-family: Arial, Helvetica, sans-serif;
+    display: auto;
+}

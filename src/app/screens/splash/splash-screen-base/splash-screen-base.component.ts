@@ -64,14 +64,14 @@ export class SplashScreenBaseComponent implements OnInit {
   //This function will take the login information and send it to the database. The user will then be logged in and brought to the homepage
   sendLogin(){
     console.log(this.loginInfo)
-    //this.messageEvent.emit(this.loggedin);
+    this.messageEvent.emit(this.loggedin);
   }
 
   //This function will take the login information and send it to the database. The user will then be logged in and brought to the homepage
   sendSignUp(){
     console.log(this.signUpInfo);
     this.userService.signUp(this.signUpInfo)
-    //this.messageEvent.emit(this.loggedin);
+    this.messageEvent.emit(this.loggedin);
   }
 
 }

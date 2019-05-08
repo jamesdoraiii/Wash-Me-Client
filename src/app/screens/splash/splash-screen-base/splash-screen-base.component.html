@@ -38,6 +38,12 @@
 
     <!--Branding-->
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
       <div fxFlex="25%">
         <h1>Local</h1>
@@ -64,7 +70,9 @@
           scrambled it to make a type specimen book.</p>
       </div>
     </div>
-
+    <br>
+    <br> <br>
+    <br>
     <!--FAQ-->
 
     <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
@@ -111,6 +119,7 @@
 
   <!-- Login Form -->
   <div class="pagecontent-login" *ngIf="status === 'login'">
+
     <h1>Login</h1>
 
     <div class="login">
@@ -172,8 +181,40 @@
   </div>
 
   <!-- Contact Form -->
-  <div class="pagecontent-contact" *ngIf="status === 'contact'">
-    <h1>Contact Us</h1>
-  </div>
 
+  <div class="pagecontent-contact" *ngIf="status === 'contact'">
+    <div class="bg">
+      <div class="main">
+
+        <div class="contact">
+          <h1 class="title">Contact</h1>
+
+
+          <form ngNoForm action="https://formspree.io/sarahtoshi714@gmail.com" method="POST">
+
+            <!-- name -->
+            <mat-form-field>
+              <input matInput type="text" name="name" placeholder="Your Name" [(ngModel)]="name">
+            </mat-form-field>
+
+            <!-- email -->
+            <mat-form-field>
+              <input matInput type="email" name="email" placeholder="Your Email" [(ngModel)]="email">
+            </mat-form-field>
+
+
+
+            <!-- message -->
+            <mat-form-field>
+              <textarea matInput name="message" placeholder="Your Message" [(ngModel)]="message"></textarea>
+            </mat-form-field>
+
+            <button class="btn" mat-raised-button type="submit">Submit</button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

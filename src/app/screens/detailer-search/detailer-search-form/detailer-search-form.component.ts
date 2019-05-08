@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+import { DetailerService } from "../../../services/detailer.service";
+
 
 @Component({
   selector: 'app-detailer-search-form',
@@ -11,10 +14,12 @@ export class DetailerSearchFormComponent implements OnInit {
   //This is where the information from the dealer search form is stored
   searchInfo =  {
     state: "",
-    city: ""
+    cities: ""
   };
 
-  constructor() { }
+  @Output() messageEvent = new EventEmitter<any>();
+
+  constructor(private detailerService: DetailerService) { }
 
   ngOnInit() {
   }
@@ -22,7 +27,13 @@ export class DetailerSearchFormComponent implements OnInit {
 
   //This is the function that is called when you press the search button. This is where you will connect with the search function on the detailer service.
   submitSearch() {
+
     console.log(this.searchInfo);
+
+    this.detailerService.searchByLocation(this.searchInfo).subscribe(res => {
+      console.log(res);
+      this.messageEvent.emit(res);
+    })
 
 
   }

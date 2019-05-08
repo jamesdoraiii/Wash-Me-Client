@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YourDetailerProfileBaseComponent implements OnInit {
 
+  status = window.localStorage.getItem('detailerStatus');
+
   constructor() { }
 
   ngOnInit() {
+  
   }
 
 }

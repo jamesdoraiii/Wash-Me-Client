@@ -1,3 +1,34 @@
-<p>
-  your-detailer-profile-setup works!
-</p>
+<h1>You do not have a detailer profile setup yet. Complete the form below to begin advertising your services</h1>
+
+<form [formGroup]="detailerSetup" (ngSubmit)="onSubmit()">
+
+  <mat-form-field>
+    <input matInput placeholder="Link To Your Imgur" formControlName="linkToImgur">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Your Services" formControlName="servicesOffered">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Pricing Information" formControlName="pricingInformation">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Availability" formControlName="availability">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="WillTravel" formControlName="willTravel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="State" formControlName="state">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Cities" formControlName="cities">
+  </mat-form-field>
+
+  <button class="btn" mat-raised-button type="submit">Submit</button>
+</form>

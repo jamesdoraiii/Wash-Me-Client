@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { UserService } from '../../../services/user.service'
+
 
 @Component({
   selector: 'app-splash-screen-base',
@@ -10,9 +12,27 @@ export class SplashScreenBaseComponent implements OnInit {
   status = "splash";
   loggedin: boolean = true;
 
+
+  //This variable is bound using ng model to the login form.
+  //This is the information that we will send to the user service in order to login
+  loginInfo =  {
+    username: "",
+    password: ""
+  };
+
+  //This variable is bound using ng model to the login form.
+  //This is the information that we will send to the user service in order to login
+  signUpInfo =  {
+    username: "",
+    password: "",
+    emailAddress: "",
+    fName: "",
+    lName: ""
+  };
+
   @Output() messageEvent = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
     console.log(this.status)
@@ -40,7 +60,17 @@ export class SplashScreenBaseComponent implements OnInit {
     console.log(this.status);
   }
 
-  sendLoginConfirmation(){
+
+  //This function will take the login information and send it to the database. The user will then be logged in and brought to the homepage
+  sendLogin(){
+    console.log(this.loginInfo)
+    this.messageEvent.emit(this.loggedin);
+  }
+
+  //This function will take the login information and send it to the database. The user will then be logged in and brought to the homepage
+  sendSignUp(){
+    console.log(this.signUpInfo);
+    this.userService.signUp(this.signUpInfo)
     this.messageEvent.emit(this.loggedin);
   }
 

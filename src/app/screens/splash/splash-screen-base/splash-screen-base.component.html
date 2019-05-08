@@ -126,14 +126,14 @@
 
     <div class="login">
       <mat-form-field>
-        <input matInput placeholder="Username">
+        <input [(ngModel)]="loginInfo.username" matInput placeholder="Username">
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Password" type="password">
+        <input [(ngModel)]="loginInfo.password" matInput placeholder="Password" type="password">
       </mat-form-field>
 
-      <button class="btn" mat-raised-button (click)="sendLoginConfirmation()">Submit</button>
+      <button class="btn" mat-raised-button (click)="sendLogin()">Submit</button>
 
       <p>Not a user yet? Sign Up!</p>
       <button class="btn" mat-raised-button (click)="switchToSignup()">SignUp</button>
@@ -148,11 +148,11 @@
 
     <div class="signup">
       <mat-form-field>
-        <input matInput placeholder="Username">
+        <input [(ngModel)]="signUpInfo.username" matInput placeholder="Username">
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Password" type="password">
+        <input [(ngModel)]="signUpInfo.password" matInput placeholder="Password" type="password">
       </mat-form-field>
 
       <mat-form-field>
@@ -160,20 +160,20 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Email Address">
+        <input [(ngModel)]="signUpInfo.emailAddress" matInput placeholder="Email Address">
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="First Name">
+        <input [(ngModel)]="signUpInfo.fName" matInput placeholder="First Name">
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Last Name">
+        <input [(ngModel)]="signUpInfo.lName" matInput placeholder="Last Name">
       </mat-form-field>
 
 
 
-      <button class="btn" mat-raised-button (click)="sendLoginConfirmation()">Submit</button>
+      <button class="btn" mat-raised-button (click)="sendSignUp()">Submit</button>
 
       <p>Already a user? Log In!</p>
       <button class="btn" mat-raised-button (click)="switchToLogin()">Log In</button>

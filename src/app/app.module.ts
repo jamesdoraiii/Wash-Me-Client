@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DetailerSearchBaseComponent } from './screens/detailer-search/detailer-search-base/detailer-search-base.component';
@@ -109,7 +111,9 @@ import { AppRoutingModule } from './app-routing.module';
     MatSortModule,
     MatPaginatorModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    
 
   ],
   providers: [],

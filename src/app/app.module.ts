@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { DetailerSearchBaseComponent } from './screens/detailer-search/detailer-search-base/detailer-search-base.component';
@@ -52,6 +54,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { AppRoutingModule } from './app-routing.module';
+
+//servuces and database stuff
+import { UserService } from './services/user.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -109,10 +115,13 @@ import { AppRoutingModule } from './app-routing.module';
     MatSortModule,
     MatPaginatorModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    HttpClientModule
+    
 
   ],
-  providers: [],
+  providers: [ UserService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
-<app-splash-screen-base (messageEvent)="receiveLoginInfo($event)" *ngIf = "signedin == false"></app-splash-screen-base>
+<app-splash-screen-base (messageEvent)="receiveLoginInfo($event)" *ngIf = "token === ''"></app-splash-screen-base>
 
-<div *ngIf = "signedin == true">
+<div *ngIf = "token != ''">
   <mat-toolbar color="primary">
       <mat-toolbar-row>
         <span><a mat-button routerLink="/home">Home</a></span>

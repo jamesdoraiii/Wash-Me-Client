@@ -1,13 +1,13 @@
 <div class="detailerSearch">
-    <mat-form-field>
-      <input matInput placeholder="State">
-    </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="searchInfo.state" matInput placeholder="State">
+  </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="City">
-    </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="searchInfo.city" matInput placeholder="City">
+  </mat-form-field>
 
-    <button mat-raised-button color="primary" (click) = "sendLoginConfirmation()">Search</button>
+    <button mat-raised-button color="primary" (click) = "submitSearch()">Search</button>
 
   
 

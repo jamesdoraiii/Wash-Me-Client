@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -57,6 +58,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 //servuces and database stuff
 import { UserService } from './services/user.service';
+import { DetailerService } from './services/detailer.service'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
@@ -117,11 +119,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
     
 
   ],
-  providers: [ UserService, HttpClient],
+  providers: [ UserService, DetailerService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

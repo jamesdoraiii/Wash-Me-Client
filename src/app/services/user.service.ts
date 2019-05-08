@@ -20,7 +20,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   signUp(signUpInfo) : Observable<any> {
-    
     return this.http.post<any>(this.dbUrl+'/createuser', signUpInfo, httpOptions);
 
   }

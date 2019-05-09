@@ -10,9 +10,10 @@ mat-toolbar {
     color:black;
 }
 
-.row{
-    text-align: right;
+.content {
+    margin-left: auto;
 }
+
 
 a{
     font-family: Arial, Helvetica, sans-serif;

@@ -14,6 +14,10 @@
     font-weight: 500;
 }
 
+.content {
+    margin-left: auto;
+}
+
 .jumbotron {
     background-image: url(../../../../assets/car1.jpg);
 

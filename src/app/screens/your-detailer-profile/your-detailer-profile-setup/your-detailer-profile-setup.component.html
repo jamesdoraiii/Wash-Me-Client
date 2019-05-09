@@ -3,31 +3,31 @@
 <form [formGroup]="detailerSetup" (ngSubmit)="onSubmit()">
 
   <mat-form-field>
-    <input matInput placeholder="Link To Your Imgur" formControlName="linkToImgur">
+    <input matInput placeholder="Link To Your Imgur" formControlName="linkToImgur" required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Your Services" formControlName="servicesOffered">
+    <input matInput placeholder="Your Services" formControlName="servicesOffered" required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Pricing Information" formControlName="pricingInformation">
+    <input matInput placeholder="Pricing Information" formControlName="pricingInformation" required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Availability" formControlName="availability">
+    <input matInput placeholder="Availability" formControlName="availability" required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="WillTravel" formControlName="willTravel">
+    <input matInput placeholder="WillTravel" formControlName="willTravel" required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="State" formControlName="state">
+    <input matInput placeholder="State" formControlName="state" required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Cities" formControlName="cities">
+    <input matInput placeholder="Cities" formControlName="cities" required>
   </mat-form-field>
 
   <button class="btn" mat-raised-button type="submit">Submit</button>

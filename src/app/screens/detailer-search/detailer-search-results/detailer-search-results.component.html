@@ -1,3 +1,20 @@
-<p>
-  detailer-search-results works!
-</p>
+<button mat-raised-button color="primary" (click) = "newSearch()">New Search</button>
+
+<ul *ngFor = "let detailer of searchData">
+  <mat-card>
+  <h1>Link To Imgur</h1>
+  <p>{{detailer.linkToImgur}}</p>
+
+  <h1>Services Offered</h1>
+  <p>{{detailer.servicesOffered}}</p>
+
+  <h1>Availability</h1>
+  <p>{{detailer.availability}}</p>
+
+  <h1>Pricing Information</h1>
+  <p>{{detailer.pricingInformation}}</p>
+
+  </mat-card>
+</ul>
+
+<h1 *ngIf = "searchData.length == 0">No Detailers Found in your area</h1>

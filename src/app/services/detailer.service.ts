@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type' : 'application/json'
+    'Content-Type' : 'application/json',
+    'Authorization' : window.localStorage.getItem('token')
   })
 }
 
@@ -20,7 +21,14 @@ export class DetailerService {
 
   createDetailerProfile(profileInfo) : Observable<any> {
 
-    return this.http.post<any>(this.dbUrl+'/createdetailerprofile', profileInfo, httpOptions);
+    const httpSetup = {
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization' : window.localStorage.getItem('token')
+      })
+    }
+
+    return this.http.post<any>(this.dbUrl+'/createdetailerprofile', profileInfo, httpSetup);
 
   }
 
@@ -55,8 +63,13 @@ export class DetailerService {
   }
 
   findSpecificDetailer(id) : Observable<any> {
-
-    return this.http.post<any>(this.dbUrl+'/findspecificdetailer/'+id, location, httpOptions);
+    const httpSetup = {
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization' : window.localStorage.getItem('token')
+      })
+    }
+    return this.http.post<any>(this.dbUrl+'/findspecificdetailer/'+id, location, httpSetup);
 
   }
 

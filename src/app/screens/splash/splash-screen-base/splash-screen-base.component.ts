@@ -64,7 +64,9 @@ export class SplashScreenBaseComponent implements OnInit {
     this.userService.logIn(this.loginInfo).subscribe(res => {
       console.log(res);
       window.localStorage.setItem('token', res.sessionToken);
+      window.localStorage.setItem('detailerStatus', res.user.isDetailer);
       this.messageEvent.emit(window.localStorage.getItem('token'));
+      window.localStorage.setItem('userId', res.user.id);
     })
 
     
@@ -77,7 +79,9 @@ export class SplashScreenBaseComponent implements OnInit {
     this.userService.signUp(this.signUpInfo).subscribe(res => {
       console.log(res);
       window.localStorage.setItem('token', res.sessionToken);
+      window.localStorage.setItem('detailerStatus', res.user.isDetailer);
       this.messageEvent.emit(window.localStorage.getItem('token'));
+      window.localStorage.setItem('userId', res.user.id);
     })
   }
 }

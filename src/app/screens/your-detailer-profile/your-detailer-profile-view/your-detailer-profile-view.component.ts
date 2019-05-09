@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DetailerService } from '../../../services/detailer.service';
 
 @Component({
   selector: 'app-your-detailer-profile-view',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YourDetailerProfileViewComponent implements OnInit {
 
-  constructor() { }
+  userProfile: any;
+
+  constructor(private detailerService : DetailerService) { }
 
   ngOnInit() {
+    this.detailerService.findSpecificDetailer(localStorage.getItem('userId')).subscribe( res => {
+      console.log(res)
+      this.userProfile = res;
+    })
   }
 
 }

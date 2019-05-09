@@ -3,9 +3,9 @@
   <!--Navbar-->
   <mat-toolbar class="nav">
     <mat-toolbar-row>
-      <span><button mat-button (click)="switchToLogin()">Log In</button></span>
-      <span><button mat-button (click)="switchToSignup()">Sign Up</button></span>
-      <span><button mat-button (click)="switchToContact()">Contact</button></span>
+      <span><button class="navBtn" style="" mat-button (click)="switchToLogin()">Log In</button></span>
+      <span><button class="navBtn" style="" mat-button (click)="switchToSignup()">Sign Up</button></span>
+      <span><button class="navBtn" style="" mat-button (click)="switchToContact()">Contact</button></span>
     </mat-toolbar-row>
   </mat-toolbar>
 
@@ -38,6 +38,12 @@
 
     <!--Branding-->
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
       <div fxFlex="25%">
         <h1>Local</h1>
@@ -64,7 +70,9 @@
           scrambled it to make a type specimen book.</p>
       </div>
     </div>
-
+    <br>
+    <br> <br>
+    <br>
     <!--FAQ-->
 
     <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
@@ -111,19 +119,21 @@
 
   <!-- Login Form -->
   <div class="pagecontent-login" *ngIf="status === 'login'">
-    <h1>Login</h1>
+
+
 
     <div class="login">
+      <h1>Login</h1>
       <mat-form-field>
         <input [(ngModel)]="loginInfo.user.username" matInput placeholder="Username">
       </mat-form-field>
-
+      <br>
       <mat-form-field>
         <input [(ngModel)]="loginInfo.user.pass" matInput placeholder="Password" type="password">
       </mat-form-field>
-
+      <br>
       <button class="btn" mat-raised-button (click)="sendLogin()">Submit</button>
-
+      <br>
       <p>Not a user yet? Sign Up!</p>
       <button class="btn" mat-raised-button (click)="switchToSignup()">SignUp</button>
 
@@ -133,35 +143,36 @@
 
   <!-- SignUp Form -->
   <div class="pagecontent-signup" *ngIf="status === 'signup'">
-    <h1>SignUp</h1>
+
 
     <div class="signup">
+      <h1>SignUp</h1>
       <mat-form-field>
         <input [(ngModel)]="signUpInfo.user.username" matInput placeholder="Username">
       </mat-form-field>
-
+      <br>
       <mat-form-field>
         <input [(ngModel)]="signUpInfo.user.pass" matInput placeholder="Password" type="password">
       </mat-form-field>
-
+      <br>
       <mat-form-field>
         <input matInput placeholder="Confirm Password" type="password">
       </mat-form-field>
-
+      <br>
       <mat-form-field>
         <input [(ngModel)]="signUpInfo.user.emailAddress" matInput placeholder="Email Address">
       </mat-form-field>
-
+      <br>
       <mat-form-field>
         <input [(ngModel)]="signUpInfo.user.fName" matInput placeholder="First Name">
       </mat-form-field>
-
+      <br>
       <mat-form-field>
         <input [(ngModel)]="signUpInfo.user.lName" matInput placeholder="Last Name">
       </mat-form-field>
 
 
-
+      <br>
       <button class="btn" mat-raised-button (click)="sendSignUp()">Submit</button>
 
       <p>Already a user? Log In!</p>
@@ -172,8 +183,38 @@
   </div>
 
   <!-- Contact Form -->
-  <div class="pagecontent-contact" *ngIf="status === 'contact'">
-    <h1>Contact Us</h1>
-  </div>
 
+  <div class="pagecontent-contact" *ngIf="status === 'contact'">
+
+
+    <div class="contact">
+      <h1 class="title">Contact</h1>
+
+
+      <form ngNoForm action="https://formspree.io/sarahtoshi714@gmail.com" method="POST">
+
+        <!-- name -->
+        <mat-form-field>
+          <input matInput type="text" name="name" placeholder="Your Name" [(ngModel)]="name">
+        </mat-form-field>
+        <br>
+        <!-- email -->
+        <mat-form-field>
+          <input matInput type="email" name="email" placeholder="Your Email" [(ngModel)]="email">
+        </mat-form-field>
+
+        <br>
+
+        <!-- message -->
+        <mat-form-field>
+          <textarea matInput name="message" placeholder="Your Message" [(ngModel)]="message"></textarea>
+        </mat-form-field>
+
+        <button class="btn" mat-raised-button type="submit">Submit</button>
+
+      </form>
+
+    </div>
+
+  </div>
 </div>

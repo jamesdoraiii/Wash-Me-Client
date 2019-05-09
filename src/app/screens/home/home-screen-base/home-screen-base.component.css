@@ -1,0 +1,45 @@
+.nav {
+    background-color: rgb(251, 240, 87) !important;
+    font-family: Arial, Helvetica, sans-serif;
+    display: auto;
+    
+}
+
+
+  .bg { 
+    background-image: url(../../../../assets/car5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+
+
+  /* logo and buttons */
+  .btns {
+    padding:2em;
+    /* background-color: rgba(255, 255, 255, 0.637); */
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+  }
+
+.btn {
+  position: relative;
+    margin: 2em;
+    padding: 2em,2em;
+    color:  rgb(251, 240, 87);
+    background-color: black;
+    width: 30%;
+
+}
+
+.btn:hover {
+  color:  rgb(251, 240, 87)  !important;
+  background: black;;
+  box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+  -webkit-box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+  -moz-box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+
+}

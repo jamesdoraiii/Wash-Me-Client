@@ -1,14 +1,16 @@
 <div class="detailerSearch">
-  <mat-form-field>
-    <input [(ngModel)]="searchInfo.state" matInput placeholder="State">
-  </mat-form-field>
+  <div class="content">
+    <h1> Search for a Detailer in Your Area </h1>
+    <mat-form-field>
+      <input [(ngModel)]="searchInfo.state" matInput placeholder="State">
+    </mat-form-field>
 
-  <mat-form-field>
-    <input [(ngModel)]="searchInfo.cities" matInput placeholder="City">
-  </mat-form-field>
+    <mat-form-field>
+      <input [(ngModel)]="searchInfo.cities" matInput placeholder="City">
+    </mat-form-field>
 
-    <button mat-raised-button color="primary" (click) = "submitSearch()">Search</button>
-
-  
+    <button class="btn" mat-raised-button (click)="submitSearch()">Search</button>
 
   </div>
+
+</div>

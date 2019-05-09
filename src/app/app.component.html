@@ -3,11 +3,14 @@
 <div *ngIf="token != ''">
   <mat-toolbar>
     <mat-toolbar-row class="row">
-      <span><a mat-button routerLink="/home">Home</a></span>
-      <span><a mat-button routerLink="/search">Find A Detailer</a></span>
-      <span><a mat-button routerLink="/yourdetailerprofile">Advertise Your Services</a></span>
-      <span><a mat-button routerLink="/youruserprofile">Your Profile</a></span>
-      <span><button class="btn" mat-button (click)="logout()">Logout</button></span>
+      <img style="width:100px;height:65px;" src="../../../../assets/wmWhite.png">
+      <div class="content">
+        <span><a mat-button routerLink="/home">Home</a></span>
+        <span><a mat-button routerLink="/search">Find A Detailer</a></span>
+        <span><a mat-button routerLink="/yourdetailerprofile">Advertise Your Services</a></span>
+        <span><a mat-button routerLink="/youruserprofile">Your Profile</a></span>
+        <span><button class="btn" mat-button (click)="logout()">Logout</button></span>
+      </div>
     </mat-toolbar-row>
   </mat-toolbar>
 

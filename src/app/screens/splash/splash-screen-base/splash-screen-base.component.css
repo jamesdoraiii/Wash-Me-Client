@@ -9,6 +9,11 @@
     display: auto;
 }
 
+.navBtn{
+    font-size: 14pt;
+    font-weight: 500;
+}
+
 .jumbotron {
     background-image: url(../../../../assets/car1.jpg);
 
@@ -106,3 +111,4 @@
     padding: 5em;
     color:black;
   }
+

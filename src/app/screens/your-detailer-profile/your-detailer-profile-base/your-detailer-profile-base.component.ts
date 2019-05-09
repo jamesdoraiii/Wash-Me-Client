@@ -15,4 +15,8 @@ export class YourDetailerProfileBaseComponent implements OnInit {
   
   }
 
+  updateStatus($event) {
+    this.status = 'true'
+  }
+
 }

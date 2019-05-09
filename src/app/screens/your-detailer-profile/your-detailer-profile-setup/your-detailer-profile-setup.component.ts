@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { DetailerService } from '../../../services/detailer.service'
+import { DetailerService } from '../../../services/detailer.service';
+import { UserService } from '../../../services/user.service';
 
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -21,20 +22,28 @@ export class YourDetailerProfileSetupComponent implements OnInit {
     state: new FormControl('')
   })
 
+  detailerSend = {detailer: {}}
+
   detailer = {};
 
-  constructor(private detailerService: DetailerService) { }
+  constructor(private detailerService: DetailerService, private userService: UserService) { }
 
+  
   ngOnInit() {
   }
 
+  @Output() messageEvent = new EventEmitter();
+
   onSubmit() {
-    this.detailer = this.detailerSetup.value;
+    this.detailerSend.detailer = this.detailerSetup.value;
 
-    this.detailerService.createDetailerProfile(this.detailer).subscribe(res =>{
+    this.detailerService.createDetailerProfile(this.detailerSend).subscribe(res =>{
       console.log(res);
+      localStorage.setItem("detailerStatus", "true");
+      this.messageEvent.emit();
     })
-
+    
+    this.userService.isDetailerOn(localStorage.getItem('userId')).subscribe();
 
   }
 

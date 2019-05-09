@@ -30,15 +30,17 @@ export class UserService {
     
   }
 
-  isDetailerOn() : Observable<any> {
+  isDetailerOn(userid) : Observable<any> {
+    console.log("this is in the service",userid)
 
-    return this.http.get<any>(this.dbUrl+'/isdetaileron');
+    console.log(this.dbUrl+'/isdetaileron/' + userid)
+    return this.http.get<any>(this.dbUrl+'/isdetaileron/' + userid);
     
   }
 
-  isDetailerOff() : Observable<any> {
+  isDetailerOff(userid) : Observable<any> {
 
-    return this.http.get<any>(this.dbUrl+'/isdetaileroff');
+    return this.http.get<any>(this.dbUrl+'/isdetaileroff/'+userid);
     
   }
 }

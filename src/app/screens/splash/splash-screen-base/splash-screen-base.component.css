@@ -116,3 +116,24 @@
     color:black;
   }
 
+.underline{
+    text-decoration: underline;
+    text-decoration-color: rgb(251, 240, 87);
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.material-icons.yellow500{ 
+    color: rgb(251, 240, 87);
+ }
+
+ .iconbkgrnd{
+    display: inline-block;
+    background-color: black;
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+ }
+

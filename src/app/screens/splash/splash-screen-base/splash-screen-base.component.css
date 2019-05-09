@@ -13,7 +13,7 @@
     background-image: url(../../../../assets/car1.jpg);
 
     background-size: cover;
-    height: 90vh;
+    height: 80vh;
 
 }
 
@@ -23,7 +23,7 @@
 }
 
 .jumSmlBox{
-    margin-top:17%;
+    margin-top:20%;
 }
 .btn {
     color:  rgb(251, 240, 87) !important;
@@ -49,6 +49,17 @@
 
  }
 
+ .login{
+     background-color: rgba(255, 255, 255, 0.637);
+     position: relative;
+     top:20%;
+     margin-left: auto;
+     margin-right: auto;
+    width:12%;
+     padding: 5em;
+     
+ }
+
 /* signup - try to mimic contact to get ride of whitespace in between img and nav */
 .pagecontent-signup{
     background-image: url(../../../../assets/car2.jpg);
@@ -59,26 +70,39 @@
 
 }
 
+.signup {
+    background-color: rgba(255, 255, 255, 0.637);
+    position: relative;
+    top:20%;
+    margin-left: auto;
+    margin-right: auto;
+    width:12%;
+    padding: 5em;
+    
+
+}
+
 
 
 
 /* 
  contact */
- .bg { 
+ .pagecontent-contact { 
     background-image: url(../../../../assets/car4.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
   }
-.main{
-    margin: 10em, 0em, 0em,10em;
-}
+
   .contact{
 
-    height: 200px;
-    width: 600px;
-      padding:  5em;
-      background-color: rgba(255, 255, 255, 0.637);
-      color:black;
+    background-color: rgba(255, 255, 255, 0.637);
+    position: relative;
+    top:20%;
+    margin-left: auto;
+    margin-right: auto;
+    width:12%;
+    padding: 5em;
+    color:black;
   }

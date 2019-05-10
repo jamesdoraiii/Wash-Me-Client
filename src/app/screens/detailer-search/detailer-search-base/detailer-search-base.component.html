@@ -1,10 +1,20 @@
-<h1> Search for a Detailer in Your Area </h1>
-
-<div *ngIf = "status == 'search'">
-<app-detailer-search-form (messageEvent)="receiveSearchInfo($event)"></app-detailer-search-form>
+<div *ngIf="status == 'search'">
+    <app-detailer-search-form (messageEvent)="receiveSearchInfo($event)"></app-detailer-search-form>
 </div>
 
 
-<div *ngIf = "status == 'results'">
-<app-detailer-search-results [searchData]= 'searchResults' (messageEvent)="receiveNewSearch($event)"></app-detailer-search-results>
+<div *ngIf="status == 'results'">
+    <app-detailer-search-results [searchData]='searchResults' (messageEvent)="receiveNewSearch()" (contactEvent)="receiveContact($event)" (viewDetailerEvent)="receiveProfileView($event)">
+    </app-detailer-search-results>
 </div>
+
+<div *ngIf="status == 'profile'">
+    <app-display-detailer-profile [detailerView] = 'detailerView' (backEvent) = "receiveBack($event)">
+    </app-display-detailer-profile>
+</div>
+
+<!-- <div *ngIf="status == 'contact'">
+    <app-contact-form [detailerEmail] = 'detailerEmail'>
+    </app-contact-form>
+</div> -->
+

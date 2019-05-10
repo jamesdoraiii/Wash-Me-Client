@@ -9,6 +9,8 @@ export class DetailerSearchBaseComponent implements OnInit {
   
   status = 'search';
   searchResults: any;
+  detailerEmail: any;
+  detailerView: any;
 
   constructor() { }
 
@@ -21,8 +23,24 @@ export class DetailerSearchBaseComponent implements OnInit {
     this.status='results'
   }
 
-  receiveNewSearch($event) {
+  receiveNewSearch() {
     this.searchResults = [];
     this.status = 'search';
+  }
+
+  receiveContact(detailerEmail) {
+    this.status = 'contact';
+    this.detailerEmail = detailerEmail;
+    console.log(detailerEmail);
+  }
+
+  receiveProfileView(detailer) {
+    this.status = 'profile';
+    this.detailerView = detailer;
+
+  }
+
+  receiveBack(){
+    this.status='results'
   }
 }

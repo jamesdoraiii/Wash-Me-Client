@@ -1,0 +1,35 @@
+.detailerSearch {
+    background-image: url(../../../../assets/car6.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.content {
+    background-color: rgba(255, 255, 255, 0.637);
+    position: relative;
+    top:20%;
+    margin-left: auto;
+    margin-right: auto;
+   width:12%;
+    padding: 5em;
+}
+
+.btn {
+    color:  rgb(251, 240, 87) !important;
+    background-color: black;
+}
+.btn:hover {
+    color:  rgb(251, 240, 87)  !important;
+    background: black;;
+    box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+    -webkit-box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+    -moz-box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+
+ }

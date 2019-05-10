@@ -15,9 +15,20 @@ export class DetailerSearchResultsComponent implements OnInit {
   }
 
   @Output() messageEvent = new EventEmitter<any>();
+  @Output() contactEvent = new EventEmitter<any>();
+  @Output() viewDetailerEvent = new EventEmitter<any>();
 
   newSearch() {
     this.messageEvent.emit();
+  }
+
+  contactDetailer(detailerEmail) {
+    //this.contactEvent.emit(detailerEmail);
+    window.open('mailto:'+detailerEmail+'?subject=Wash Me Detailing Request');
+  }
+
+  viewDetailer(detailer) {
+    this.viewDetailerEvent.emit(detailer);
   }
 
 }

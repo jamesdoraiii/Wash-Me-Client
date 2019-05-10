@@ -19,4 +19,9 @@ export class YourDetailerProfileBaseComponent implements OnInit {
     this.status = 'true'
   }
 
+  deleteProfile(){
+    this.status = 'false';
+    localStorage.setItem('detailerStatus','false');
+  }
+
 }

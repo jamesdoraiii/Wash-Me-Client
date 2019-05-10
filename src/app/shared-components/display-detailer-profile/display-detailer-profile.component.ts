@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-display-detailer-profile',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display-detailer-profile.component.css']
 })
 export class DisplayDetailerProfileComponent implements OnInit {
+
+  @Input() detailerViewId: any;
 
   constructor() { }
 

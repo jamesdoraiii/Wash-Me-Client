@@ -4,6 +4,17 @@
 
 
 <div *ngIf="status == 'results'">
-    <app-detailer-search-results [searchData]='searchResults' (messageEvent)="receiveNewSearch($event)">
+    <app-detailer-search-results [searchData]='searchResults' (messageEvent)="receiveNewSearch()" (contactEvent)="receiveContact($event)" (viewDetailerEvent)="receiveProfileView($event)">
     </app-detailer-search-results>
 </div>
+
+<div *ngIf="status == 'profile'">
+    <app-display-detailer-profile [detailerViewId] = 'detailerViewId'>
+    </app-display-detailer-profile>
+</div>
+
+<div *ngIf="status == 'contact'">
+    <app-contact-form [detailerContactId] = 'detailerContactId'>
+    </app-contact-form>
+</div>
+

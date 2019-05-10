@@ -18,6 +18,7 @@ export class DetailerSearchFormComponent implements OnInit {
   };
 
   @Output() messageEvent = new EventEmitter<any>();
+  
 
   constructor(private detailerService: DetailerService) { }
 

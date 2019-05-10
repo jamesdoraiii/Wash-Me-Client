@@ -15,9 +15,19 @@ export class DetailerSearchResultsComponent implements OnInit {
   }
 
   @Output() messageEvent = new EventEmitter<any>();
+  @Output() contactEvent = new EventEmitter<any>();
+  @Output() viewDetailerEvent = new EventEmitter<any>();
 
   newSearch() {
     this.messageEvent.emit();
+  }
+
+  contactDetailer(detailerId) {
+    this.contactEvent.emit(detailerId);
+  }
+
+  viewDetailer(detailerId) {
+    this.viewDetailerEvent.emit(detailerId);
   }
 
 }

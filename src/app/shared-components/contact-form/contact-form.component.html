@@ -1,3 +1,22 @@
-<p>
-  contact-form works!
-</p>
+<form ngNoForm action="https://formspree.io/sarahtoshi714@gmail.com" method="POST">
+
+  <!-- name -->
+  <mat-form-field>
+    <input matInput type="text" name="name" placeholder="Your Name" [(ngModel)]="name">
+  </mat-form-field>
+  <br>
+  <!-- email -->
+  <mat-form-field>
+    <input matInput type="email" name="email" placeholder="Your Email" [(ngModel)]="email">
+  </mat-form-field>
+
+  <br>
+
+  <!-- message -->
+  <mat-form-field>
+    <textarea matInput name="message" placeholder="Your Message" [(ngModel)]="message"></textarea>
+  </mat-form-field>
+
+  <button class="btn" mat-raised-button type="submit">Submit</button>
+
+</form>

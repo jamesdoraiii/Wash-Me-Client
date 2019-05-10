@@ -71,7 +71,7 @@
 
 /* signup - try to mimic contact to get ride of whitespace in between img and nav */
 .pagecontent-signup{
-    background-image: url(../../../../assets/car2.jpg);
+    background-image: url(../../../../assets/insideCar1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -1,34 +1,40 @@
-<h1>You do not have a detailer profile setup yet. Complete the form below to begin advertising your services</h1>
+<div class="pagecontent-signup">
+  <div class="signup">
 
-<form [formGroup]="detailerSetup" (ngSubmit)="onSubmit()">
+    <h3>You do not have a detailer profile setup yet. Complete the form below to begin advertising your services.</h3>
 
-  <mat-form-field>
-    <input matInput placeholder="Link To Your Imgur" formControlName="linkToImgur" required>
-  </mat-form-field>
+    <form [formGroup]="detailerSetup" (ngSubmit)="onSubmit()">
 
-  <mat-form-field>
-    <input matInput placeholder="Your Services" formControlName="servicesOffered" required>
-  </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Link To Your Imgur" formControlName="linkToImgur" required>
+      </mat-form-field>
 
-  <mat-form-field>
-    <input matInput placeholder="Pricing Information" formControlName="pricingInformation" required>
-  </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Your Services" formControlName="servicesOffered" required>
+      </mat-form-field>
 
-  <mat-form-field>
-    <input matInput placeholder="Availability" formControlName="availability" required>
-  </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Pricing Information" formControlName="pricingInformation" required>
+      </mat-form-field>
 
-  <mat-form-field>
-    <input matInput placeholder="WillTravel" formControlName="willTravel" required>
-  </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Availability" formControlName="availability" required>
+      </mat-form-field>
 
-  <mat-form-field>
-    <input matInput placeholder="State" formControlName="state" required>
-  </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="WillTravel" formControlName="willTravel" required>
+      </mat-form-field>
 
-  <mat-form-field>
-    <input matInput placeholder="Cities" formControlName="cities" required>
-  </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="State" formControlName="state" required>
+      </mat-form-field>
 
-  <button class="btn" mat-raised-button type="submit">Submit</button>
-</form>
+      <mat-form-field>
+        <input matInput placeholder="Cities" formControlName="cities" required>
+      </mat-form-field>
+
+      <button class="btn" mat-raised-button type="submit">Submit</button>
+    </form>
+
+  </div>
+</div>

@@ -129,11 +129,19 @@
     color: rgb(251, 240, 87);
  }
 
+ .material-icons.yellow500.md-48{
+     position: relative;
+     margin: 50%;
+     right:24px;
+     bottom: 23px;
+ }
+
  .iconbkgrnd{
-    display: inline-block;
+    position: relative;
     background-color: black;
     border-radius: 50%;
     height: 65px;
     width: 65px;
+    left: 25px;
  }
 

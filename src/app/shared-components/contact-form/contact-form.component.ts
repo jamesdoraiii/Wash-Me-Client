@@ -7,12 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ContactFormComponent implements OnInit {
 
-  @Input() detailerContactId: any;
+  @Input() detailerEmail: any;
+
+  emailAddress = ('https://formspree.io/'+this.detailerEmail)
 
   constructor() { }
 
   ngOnInit() {
-    console.log("this is the contact form and the id i have is", this.detailerContactId)
+    console.log("this is the contact form and the id i have is", this.detailerEmail)
   }
 
 }

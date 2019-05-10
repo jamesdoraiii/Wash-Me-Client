@@ -2,22 +2,16 @@
 
 <ul *ngFor = "let detailer of searchData">
   <mat-card>
-  <h1>Link To Imgur</h1>
-  <p>{{detailer.linkToImgur}}</p>
+  
+  <h1>{{detailer.fName}} {{detailer.lName}}</h1>
 
   <h1>Services Offered</h1>
   <p>{{detailer.servicesOffered}}</p>
 
-  <h1>Availability</h1>
-  <p>{{detailer.availability}}</p>
-
-  <h1>Pricing Information</h1>
-  <p>{{detailer.pricingInformation}}</p>
-
-  <button class="btn" mat-raised-button (click)="viewDetailer(detailer.id)">View Profile</button>
+  <button class="btn" mat-raised-button (click)="viewDetailer(detailer)">View Profile</button>
   <button class="btn" mat-raised-button (click)="contactDetailer(detailer.emailAddress)">Contact</button>
 
   </mat-card>
 </ul>
 
-<h1 *ngIf = "searchData.length == 0">No Detailers Found in your area</h1>
+<h1 *ngIf = "searchData.length == 0 || searchData.length == null">No Detailers Found in your area</h1>

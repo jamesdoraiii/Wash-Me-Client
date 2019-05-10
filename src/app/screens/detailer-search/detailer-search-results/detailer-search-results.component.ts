@@ -23,11 +23,12 @@ export class DetailerSearchResultsComponent implements OnInit {
   }
 
   contactDetailer(detailerEmail) {
-    this.contactEvent.emit(detailerEmail);
+    //this.contactEvent.emit(detailerEmail);
+    window.open('mailto:'+detailerEmail+'?subject=Wash Me Detailing Request');
   }
 
-  viewDetailer(detailerId) {
-    this.viewDetailerEvent.emit(detailerId);
+  viewDetailer(detailer) {
+    this.viewDetailerEvent.emit(detailer);
   }
 
 }

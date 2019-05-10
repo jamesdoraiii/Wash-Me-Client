@@ -10,7 +10,7 @@ export class DetailerSearchBaseComponent implements OnInit {
   status = 'search';
   searchResults: any;
   detailerEmail: any;
-  detailerViewId: any;
+  detailerView: any;
 
   constructor() { }
 
@@ -34,10 +34,13 @@ export class DetailerSearchBaseComponent implements OnInit {
     console.log(detailerEmail);
   }
 
-  receiveProfileView(detailerId) {
+  receiveProfileView(detailer) {
     this.status = 'profile';
-    this.detailerViewId = detailerId;
-    console.log(detailerId);
+    this.detailerView = detailer;
 
+  }
+
+  receiveBack(){
+    this.status='results'
   }
 }

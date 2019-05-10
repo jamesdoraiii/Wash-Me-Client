@@ -9,12 +9,12 @@
 </div>
 
 <div *ngIf="status == 'profile'">
-    <app-display-detailer-profile [detailerViewId] = 'detailerViewId'>
+    <app-display-detailer-profile [detailerView] = 'detailerView' (backEvent) = "receiveBack($event)">
     </app-display-detailer-profile>
 </div>
 
-<div *ngIf="status == 'contact'">
-    <app-contact-form [detailerContactId] = 'detailerContactId'>
+<!-- <div *ngIf="status == 'contact'">
+    <app-contact-form [detailerEmail] = 'detailerEmail'>
     </app-contact-form>
-</div>
+</div> -->
 

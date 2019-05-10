@@ -5,6 +5,8 @@
   
   <h3>Link To Imgur</h3>
   <p>{{userProfile.linkToImgur}}</p>
+  
+  <iframe src = "https://www.powr.io/plugins/photo-gallery/view/19825938?mode=page" width="1000px" height="800px" scrolling = "yes"></iframe>
 
   <h3>Services Offered</h3>
   <p>{{userProfile.servicesOffered}}</p>
@@ -14,6 +16,10 @@
 
   <h3>Pricing Information</h3>
   <p>{{userProfile.pricingInformation}}</p>
+
+  <button mat-raised-button color="primary" (click) = "editProfile()">Edit Profile</button>
+
+  <button mat-raised-button color="primary" (click) = "deleteProfile()">Delete Profile</button>
 
   </mat-card>
 

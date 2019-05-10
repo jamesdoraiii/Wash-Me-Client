@@ -34,7 +34,14 @@ export class DetailerService {
 
   deleteDetailerProfile(id) : Observable<any> {
 
-    return this.http.post<any>(this.dbUrl+'/deletedetailerprofile/'+id, httpOptions);
+    const httpSetup = {
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization' : window.localStorage.getItem('token')
+      })
+    }
+
+    return this.http.delete<any>(this.dbUrl+'/deletedetailerprofile/'+id, httpSetup);
 
   }
 

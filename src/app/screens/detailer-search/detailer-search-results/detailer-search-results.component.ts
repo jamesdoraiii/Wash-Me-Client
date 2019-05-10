@@ -22,8 +22,8 @@ export class DetailerSearchResultsComponent implements OnInit {
     this.messageEvent.emit();
   }
 
-  contactDetailer(detailerId) {
-    this.contactEvent.emit(detailerId);
+  contactDetailer(detailerEmail) {
+    this.contactEvent.emit(detailerEmail);
   }
 
   viewDetailer(detailerId) {

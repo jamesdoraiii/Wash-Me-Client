@@ -9,7 +9,7 @@ export class DetailerSearchBaseComponent implements OnInit {
   
   status = 'search';
   searchResults: any;
-  detailerContactId: any;
+  detailerEmail: any;
   detailerViewId: any;
 
   constructor() { }
@@ -28,10 +28,10 @@ export class DetailerSearchBaseComponent implements OnInit {
     this.status = 'search';
   }
 
-  receiveContact(detailerId) {
+  receiveContact(detailerEmail) {
     this.status = 'contact';
-    this.detailerContactId = detailerId;
-    console.log(detailerId);
+    this.detailerEmail = detailerEmail;
+    console.log(detailerEmail);
   }
 
   receiveProfileView(detailerId) {

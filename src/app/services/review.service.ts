@@ -1,35 +1,46 @@
-// import { Injectable } from '@angular/core';
-// //import { HttpClient, HttpHeaders } from 'angular/common/http';
-// //import { Review } from '../models/review.model';
-// import { Observable } from 'rxjs';
-// import { HttpHeaders } from '@angular/common/http';
-// import { HttpClient } from 'selenium-webdriver/http';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
 
+@Injectable({
+  providedIn: "root"
+})
+export class ReviewService {
+  private dbUrl = "http://localhost:3000/review";
 
-// const httpOptions = {
-//   headers: new HttpHeaders({
-//     'Content-Type' : 'application/json'
-//   })
-// }
+  constructor(private http: HttpClient) {}
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class ReviewService {
-//   private reviewUrl = 'http://localhost:3000/'
+  createReview(review): Observable<any> {
 
-//   constructor(private http: HttpClient) { }
+    const httpSetup = {
+        headers: new HttpHeaders({
+          "Content-Type": "application/json",
+          Authorization: window.localStorage.getItem("token")
+        })
+      };
 
+    return this.http.post<any>(this.dbUrl + "/create",review, httpSetup);
+  }
 
-// createReview(Review): Observable<any>{
-//   return this.http.post<any[]>()
-// }
+  getUserReviews(): Observable<any> {
+    const httpSetup = {
+        headers: new HttpHeaders({
+          "Content-Type": "application/json",
+          Authorization: window.localStorage.getItem("token")
+        })
+      };
 
-// getReview(): Observable<any[]>{
-//   return this.http.get<any[]>(review, httpOptions)
-// }
+    return this.http.get<any>(this.dbUrl + "/finduserreviews", httpSetup);
+  }
 
+  getDetailerReviews(detailerId): Observable<any>{
+    const httpSetup = {
+        headers: new HttpHeaders({
+          "Content-Type": "application/json",
+          Authorization: window.localStorage.getItem("token")
+        })
+      };
 
-
-
-// }
+      return this.http.get<any>(this.dbUrl + "/finddetailerreviews/"+detailerId, httpSetup);
+  }
+}

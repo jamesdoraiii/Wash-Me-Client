@@ -60,6 +60,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserService } from './services/user.service';
 import { DetailerService } from './services/detailer.service'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { UpdateProfileComponent } from './screens/your-detailer-profile/update-profile/update-profile.component';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ContactFormComponent,
     DetailerProfileSetupFormComponent,
     DisplayDetailerProfileComponent,
-    DisplayReviewsComponent
+    DisplayReviewsComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,

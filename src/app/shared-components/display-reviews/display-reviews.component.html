@@ -1,3 +1,28 @@
-<p>
-  display-reviews works!
-</p>
+
+
+<div *ngIf="reviewInputStatus === true">
+  <h2>Write a Review about this Detailer</h2>
+  <form [formGroup]="reviewCreate" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="review" formControlName="reviewContent" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="stars" formControlName="numberOfStars" required>
+    </mat-form-field>
+
+    <button class="btn" mat-raised-button type="submit">Submit</button>  
+    
+  </form>
+</div>
+
+<div>
+  <h2>Reviews On This Profile</h2>
+  <h2 *ngIf = "reviews.length == 0 || reviews.length == null">No reviews have been made on this detailer yet.</h2>
+  <ul *ngFor = "let review of reviews">
+    <mat-card>
+      <p> {{ review.reviewContent }}</p>
+      <p>stars {{ review.numberOfStars }}</p>
+    </mat-card>
+  </ul>
+</div>

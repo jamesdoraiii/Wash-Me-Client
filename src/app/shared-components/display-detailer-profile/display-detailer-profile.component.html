@@ -2,7 +2,7 @@
 
   <mat-card>
 
-    <h1> Your Detailer Profile </h1>
+    <h1> {{detailerView.fName}}'s Profile </h1>
     
     <h3>Link To Imgur</h3>
     <p>{{detailerView.linkToImgur}}</p>
@@ -17,6 +17,8 @@
     <p>{{detailerView.pricingInformation}}</p>
 
     <button mat-raised-button color="primary" (click) = "contact()">Contact This Detailer</button>
+
+    <app-display-reviews [detailerId] = "detailerView.id" [reviewInput] = "true"></app-display-reviews>
   
     </mat-card>
   

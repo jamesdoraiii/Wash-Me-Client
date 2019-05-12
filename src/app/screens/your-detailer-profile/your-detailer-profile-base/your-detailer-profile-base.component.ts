@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DetailerService } from '../../../services/detailer.service';
 
 @Component({
   selector: 'app-your-detailer-profile-base',
@@ -9,9 +10,18 @@ export class YourDetailerProfileBaseComponent implements OnInit {
 
   status = window.localStorage.getItem('detailerStatus');
 
-  constructor() { }
+  detailer: any;
+
+  constructor(private detailerService : DetailerService) { }
 
   ngOnInit() {
+    if(this.status == 'true'){
+      this.detailerService.findSpecificDetailer(localStorage.getItem('userId')).subscribe( res => {
+        console.log(res)
+        this.detailer = res;
+      })
+
+    }
   
   }
 
@@ -22,6 +32,14 @@ export class YourDetailerProfileBaseComponent implements OnInit {
   deleteProfile(){
     this.status = 'false';
     localStorage.setItem('detailerStatus','false');
+  }
+
+  updateProfile(){
+    this.status = 'update'
+  }
+
+  updateComplete(){
+    this.status = 'true';
   }
 
 }

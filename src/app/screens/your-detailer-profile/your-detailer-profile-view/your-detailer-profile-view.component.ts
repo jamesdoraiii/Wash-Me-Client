@@ -21,6 +21,7 @@ export class YourDetailerProfileViewComponent implements OnInit {
   }
 
   @Output() deleteEvent = new EventEmitter();
+  @Output() updateEvent = new EventEmitter();
 
   editProfile() {
 
@@ -34,7 +35,10 @@ export class YourDetailerProfileViewComponent implements OnInit {
         console.log(res);
       })
     })
+  }
 
+  updateProfile(){
+    this.updateEvent.emit();
   }
 
 }

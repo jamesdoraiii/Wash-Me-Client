@@ -1,4 +1,6 @@
 
 <app-your-detailer-profile-setup *ngIf = "status === 'false'" (messageEvent)="updateStatus($event)"></app-your-detailer-profile-setup>
 
-<app-your-detailer-profile-view *ngIf = "status === 'true'" (deleteEvent)="deleteProfile()"></app-your-detailer-profile-view>
+<app-your-detailer-profile-view *ngIf = "status === 'true'" (deleteEvent)="deleteProfile()" (updateEvent)="updateProfile()"></app-your-detailer-profile-view>
+
+<app-update-profile *ngIf = "status === 'update'" (updateEvent)="updateComplete()" [detailer]="detailer"></app-update-profile>

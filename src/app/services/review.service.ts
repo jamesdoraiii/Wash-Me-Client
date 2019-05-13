@@ -8,39 +8,50 @@ import { Observable } from "rxjs";
 export class ReviewService {
   private dbUrl = "http://localhost:3000/review";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   createReview(review): Observable<any> {
 
     const httpSetup = {
-        headers: new HttpHeaders({
-          "Content-Type": "application/json",
-          Authorization: window.localStorage.getItem("token")
-        })
-      };
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: window.localStorage.getItem("token")
+      })
+    };
 
-    return this.http.post<any>(this.dbUrl + "/create",review, httpSetup);
+    return this.http.post<any>(this.dbUrl + "/create", review, httpSetup);
   }
 
   getUserReviews(): Observable<any> {
     const httpSetup = {
-        headers: new HttpHeaders({
-          "Content-Type": "application/json",
-          Authorization: window.localStorage.getItem("token")
-        })
-      };
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: window.localStorage.getItem("token")
+      })
+    };
 
     return this.http.get<any>(this.dbUrl + "/finduserreviews", httpSetup);
   }
 
-  getDetailerReviews(detailerId): Observable<any>{
+  getDetailerReviews(detailerId): Observable<any> {
     const httpSetup = {
-        headers: new HttpHeaders({
-          "Content-Type": "application/json",
-          Authorization: window.localStorage.getItem("token")
-        })
-      };
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: window.localStorage.getItem("token")
+      })
+    };
 
-      return this.http.get<any>(this.dbUrl + "/finddetailerreviews/"+detailerId, httpSetup);
+    return this.http.get<any>(this.dbUrl + "/finddetailerreviews/" + detailerId, httpSetup);
   }
+  deleteReview(reviewId): Observable<any> {
+    const httpSetup = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: window.localStorage.getItem("token")
+
+      })
+    };
+    return this.http.delete<any>(this.dbUrl + "/deletereview/" + reviewId, httpSetup)
+  }
+
 }

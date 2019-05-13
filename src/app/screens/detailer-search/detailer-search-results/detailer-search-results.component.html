@@ -1,17 +1,28 @@
-<button mat-raised-button color="primary" (click) = "newSearch()">New Search</button>
+<div class="pagecontent-results">
+  <button mat-raised-button class="sbtn" (click)="newSearch()">
+    <h1> New Search </h1>
+  </button>
+  <br>
 
-<ul *ngFor = "let detailer of searchData">
-  <mat-card>
-  
-  <h1>{{detailer.fName}} {{detailer.lName}}</h1>
 
-  <h1>Services Offered</h1>
-  <p>{{detailer.servicesOffered}}</p>
+  <div class="results">
 
-  <button class="btn" mat-raised-button (click)="viewDetailer(detailer)">View Profile</button>
-  <button class="btn" mat-raised-button (click)="contactDetailer(detailer.emailAddress)">Contact</button>
 
-  </mat-card>
-</ul>
+    <div class="cardContainer" *ngFor="let detailer of searchData">
+      <mat-card>
 
-<h1 *ngIf = "searchData.length == 0 || searchData.length == null">No Detailers Found in your area</h1>
+        <h1>{{detailer.fName}} {{detailer.lName}}</h1>
+
+        <h2>Services Offered</h2>
+        <p>{{detailer.servicesOffered}}</p>
+
+        <button class="btn" mat-raised-button (click)="viewDetailer(detailer)">View Profile</button>
+        <br>
+        <button class="btn" mat-raised-button (click)="contactDetailer(detailer.emailAddress)">Contact</button>
+
+      </mat-card>
+    </div>
+
+    <h1 *ngIf="searchData.length == 0 || searchData.length == null">No Detailers Found in your area</h1>
+  </div>
+</div>

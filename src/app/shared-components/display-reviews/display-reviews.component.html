@@ -1,5 +1,3 @@
-
-
 <div *ngIf="reviewInputStatus === true">
   <h2>Write a Review about this Detailer</h2>
   <form [formGroup]="reviewCreate" (ngSubmit)="onSubmit()">
@@ -7,22 +5,35 @@
       <input matInput placeholder="review" formControlName="reviewContent" required>
     </mat-form-field>
 
-    <mat-form-field>
+    <!-- <mat-form-field>
       <input matInput placeholder="stars" formControlName="numberOfStars" required>
+    </mat-form-field> -->
+
+    <mat-form-field>
+      <mat-label>Stars</mat-label>
+      <select matNativeControl formControlName="numberOfStars" required>
+        <option value="1">★</option>
+        <option value="2">★★</option>
+        <option value="3">★★★</option>
+        <option value="4">★★★★</option>
+        <option value="5">★★★★</option>
+      </select>
     </mat-form-field>
 
-    <button class="btn" mat-raised-button type="submit">Submit</button>  
-    
+    <button class="btn" mat-raised-button type="submit">Submit</button>
+
   </form>
 </div>
 
 <div>
   <h2>Reviews On This Profile</h2>
-  <h2 *ngIf = "reviews.length == 0 || reviews.length == null">No reviews have been made on this detailer yet.</h2>
-  <ul *ngFor = "let review of reviews">
+  <h2 *ngIf="reviews.length == 0 || reviews.length == null">No reviews have been made on this detailer yet.</h2>
+  <ul *ngFor="let review of reviews">
     <mat-card>
       <p> {{ review.reviewContent }}</p>
       <p>stars {{ review.numberOfStars }}</p>
+      <button class="btn" mat-raised-button *ngIf="adminStatus === 'true'"
+        (click)="deleteReview(review.id)">Delete</button>
     </mat-card>
   </ul>
 </div>

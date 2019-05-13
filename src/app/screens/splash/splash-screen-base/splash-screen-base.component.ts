@@ -12,24 +12,28 @@ export class SplashScreenBaseComponent implements OnInit {
 
   //This variable is bound using ng model to the login form.
   //This is the information that we will send to the user service in order to login
-  loginInfo = {user : {
-    username: "",
-    pass: ""
-  }};
+  loginInfo = {
+    user: {
+      username: "",
+      pass: ""
+    }
+  };
 
   //This variable is bound using ng model to the login form.
   //This is the information that we will send to the user service in order to login
-  signUpInfo = {user : {
-    username: "",
-    pass: "",
-    emailAddress: "",
-    fName: "",
-    lName: ""
-  }};
+  signUpInfo = {
+    user: {
+      username: "",
+      pass: "",
+      emailAddress: "",
+      fName: "",
+      lName: ""
+    }
+  };
 
   @Output() messageEvent = new EventEmitter<any>();
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -65,23 +69,26 @@ export class SplashScreenBaseComponent implements OnInit {
       console.log(res);
       window.localStorage.setItem('token', res.sessionToken);
       window.localStorage.setItem('detailerStatus', res.user.isDetailer);
+      window.localStorage.setItem('detailerStatus', res.user.isDetailer);
       this.messageEvent.emit(window.localStorage.getItem('token'));
       window.localStorage.setItem('userId', res.user.id);
     })
 
-    
+
   }
 
   //This function will take the login information and send it to the database. The user will then be logged in and brought to the homepage
-  
+
   sendSignUp() {
-    
+
     this.userService.signUp(this.signUpInfo).subscribe(res => {
       console.log(res);
       window.localStorage.setItem('token', res.sessionToken);
       window.localStorage.setItem('detailerStatus', res.user.isDetailer);
+      window.localStorage.setItem('adminStatus', res.user.isAdmin);
       this.messageEvent.emit(window.localStorage.getItem('token'));
       window.localStorage.setItem('userId', res.user.id);
+
     })
   }
 }

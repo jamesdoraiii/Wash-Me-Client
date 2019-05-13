@@ -1,3 +1,8 @@
-<p>
-  your-user-profile-base works!
-</p>
+<h1>Reviews</h1>
+<br>
+<br>
+<ul>
+  <li *ngFor="let review of userReviews">
+    {{ review.reviewContent }}
+  </li>
+</ul>

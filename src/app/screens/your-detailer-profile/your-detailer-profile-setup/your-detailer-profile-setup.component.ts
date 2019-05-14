@@ -4,6 +4,10 @@ import { DetailerService } from '../../../services/detailer.service';
 import { UserService } from '../../../services/user.service';
 
 import { FormGroup, FormControl } from '@angular/forms';
+import data from '../../../../assets/locations/US_States_and_Cities.json';
+
+
+
 
 @Component({
   selector: 'app-your-detailer-profile-setup',
@@ -11,6 +15,11 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./your-detailer-profile-setup.component.css']
 })
 export class YourDetailerProfileSetupComponent implements OnInit {
+
+  states = Object.keys(data);
+
+  cities: any;
+
 
   detailerSetup = new FormGroup({
     linkToImgur: new FormControl(''),
@@ -22,13 +31,13 @@ export class YourDetailerProfileSetupComponent implements OnInit {
     state: new FormControl('')
   })
 
-  detailerSend = {detailer: {}}
+  detailerSend = { detailer: {} }
 
   detailer = {};
 
   constructor(private detailerService: DetailerService, private userService: UserService) { }
 
-  
+
   ngOnInit() {
   }
 
@@ -37,13 +46,21 @@ export class YourDetailerProfileSetupComponent implements OnInit {
   onSubmit() {
     this.detailerSend.detailer = this.detailerSetup.value;
 
-    this.detailerService.createDetailerProfile(this.detailerSend).subscribe(res =>{
+    this.detailerService.createDetailerProfile(this.detailerSend).subscribe(res => {
       console.log(res);
       localStorage.setItem("detailerStatus", "true");
       this.messageEvent.emit();
     })
-    
+
     this.userService.isDetailerOn(localStorage.getItem('userId')).subscribe();
+
+  }
+
+  getCities() {
+    var selectedState = this.detailerSetup.controls['state'].value;
+
+    this.cities = data[selectedState];
+    console.log(this.cities);
 
   }
 

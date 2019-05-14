@@ -61,6 +61,7 @@ import { UserService } from './services/user.service';
 import { DetailerService } from './services/detailer.service'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UpdateProfileComponent } from './screens/your-detailer-profile/update-profile/update-profile.component';
+import { ContactService } from './services/contact.service';
 
 
 @NgModule({
@@ -126,7 +127,7 @@ import { UpdateProfileComponent } from './screens/your-detailer-profile/update-p
     
 
   ],
-  providers: [ UserService, DetailerService, HttpClient],
+  providers: [ UserService, DetailerService, ContactService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

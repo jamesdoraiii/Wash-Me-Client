@@ -31,14 +31,25 @@
       </mat-form-field>
 
 
-
+      <br>
 
       <mat-form-field>
-        <input matInput placeholder="State" formControlName="state" required>
+        <mat-select matNativeControl formControlName="state" placeholder="State" required>
+
+          <mat-option *ngFor="let state of states" value="{{state}}" (click)="getCities()">{{state}}</mat-option>
+
+        </mat-select>
       </mat-form-field>
 
+
+      <br>
+
       <mat-form-field>
-        <input matInput placeholder="Cities" formControlName="cities" required>
+        <mat-select matNativeControl formControlName="cities" placeholder="City" required>
+
+          <mat-option *ngFor="let city of cities" value="{{city}}">{{city}}</mat-option>
+
+        </mat-select>
       </mat-form-field>
 
       <button class="btn" mat-raised-button type="submit">Submit</button>

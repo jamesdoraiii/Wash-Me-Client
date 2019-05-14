@@ -29,8 +29,6 @@ export class DetailerSearchFormComponent implements OnInit {
   //This is the function that is called when you press the search button. This is where you will connect with the search function on the detailer service.
   submitSearch() {
 
-    console.log(this.searchInfo);
-
     this.detailerService.searchByLocation(this.searchInfo).subscribe(res => {
       console.log(res);
       this.messageEvent.emit(res);

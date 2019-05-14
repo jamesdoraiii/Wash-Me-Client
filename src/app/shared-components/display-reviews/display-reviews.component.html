@@ -12,11 +12,11 @@
     <mat-form-field>
       <mat-label>Stars</mat-label>
       <select matNativeControl formControlName="numberOfStars" required>
-        <option value="1">★</option>
-        <option value="2">★★</option>
-        <option value="3">★★★</option>
-        <option value="4">★★★★</option>
-        <option value="5">★★★★</option>
+        <option value="★">★</option>
+        <option value="★★">★★</option>
+        <option value="★★★">★★★</option>
+        <option value="★★★★">★★★★</option>
+        <option value="★★★★★">★★★★★</option>
       </select>
     </mat-form-field>
 
@@ -30,8 +30,9 @@
   <h2 *ngIf="reviews.length == 0 || reviews.length == null">No reviews have been made on this detailer yet.</h2>
   <ul *ngFor="let review of reviews">
     <mat-card>
+      <h3>Review from {{ review.reviewerFname }}</h3>
       <p> {{ review.reviewContent }}</p>
-      <p>stars {{ review.numberOfStars }}</p>
+      <p>Stars: {{ review.numberOfStars }}</p>
       <button class="btn" mat-raised-button *ngIf="adminStatus === 'true'"
         (click)="deleteReview(review.id)">Delete</button>
     </mat-card>

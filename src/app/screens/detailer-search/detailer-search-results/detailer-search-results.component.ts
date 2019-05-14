@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ContactService } from '../../../services/contact.service';
+
 
 @Component({
   selector: 'app-detailer-search-results',
@@ -9,7 +11,7 @@ export class DetailerSearchResultsComponent implements OnInit {
 
   @Input() searchData: any;
 
-  constructor() { }
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
   }
@@ -22,8 +24,16 @@ export class DetailerSearchResultsComponent implements OnInit {
     this.messageEvent.emit();
   }
 
-  contactDetailer(detailerEmail) {
-    //this.contactEvent.emit(detailerEmail);
+  contactDetailer(detailerEmail, detailerId, detailerFname, detailerLname) {
+
+    var contact = {
+      detailerId: detailerId,
+      detailerFname: detailerFname,
+      detailerLname: detailerLname
+    }
+    this.contactService.createContact(contact).subscribe(res => {
+      console.log(res);
+    })
     window.open('mailto:'+detailerEmail+'?subject=Wash Me Detailing Request');
   }
 

@@ -2,11 +2,22 @@
   <div class="content">
     <h1> Search for a Detailer in Your Area </h1>
     <mat-form-field>
-      <input [(ngModel)]="searchInfo.state" matInput placeholder="State">
+      <mat-select matNativeControl placeholder="State" required [(ngModel)]="searchInfo.state">
+
+        <mat-option *ngFor="let state of states" value="{{state}}" (click)="getCities()">
+          {{state}}</mat-option>
+
+      </mat-select>
     </mat-form-field>
 
+
+    <br>
     <mat-form-field>
-      <input [(ngModel)]="searchInfo.cities" matInput placeholder="City">
+      <mat-select matNativeControl placeholder="City" [(ngModel)]="searchInfo.cities" required>
+
+        <mat-option *ngFor="let city of cities" value="{{city}}">{{city}}</mat-option>
+
+      </mat-select>
     </mat-form-field>
 
     <button class="btn" mat-raised-button (click)="submitSearch()">Search</button>

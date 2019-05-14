@@ -1,3 +1,18 @@
-<p>
-  your-user-profile-base works!
-</p>
+<h1>Reviews You Have Made</h1>
+
+<ul *ngFor="let review of userReviews">
+    <mat-card>
+    <h1>Review about {{ review.detailerFname }} {{ review.detailerLname }}</h1>
+    <p>Review: {{ review.reviewContent }} </p>
+    <p>Stars: {{ review.numberOfStars }} </p>
+    </mat-card>
+</ul>
+
+<br>
+
+<h1>Detailers You Have Contacted</h1>
+<ul *ngFor="let contact of userContacts">
+    <mat-card>
+    <p>You contacted {{ contact.detailerFname }} {{ contact.detailerLname }} on {{contact.createdAt}}</p>
+    </mat-card>
+</ul>

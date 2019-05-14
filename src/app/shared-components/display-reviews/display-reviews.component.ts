@@ -10,40 +10,61 @@ import { findSafariExecutable } from 'selenium-webdriver/safari';
 })
 export class DisplayReviewsComponent implements OnInit {
 
-  @Input() detailerId: any;
+  @Input() detailer: any;
 
   @Input() reviewInput: any;
 
   reviewInputStatus: any;
+
+  adminStatus: any;
 
   reviews: any;
 
   reviewCreate = new FormGroup({
     detailerId: new FormControl(),
     reviewContent: new FormControl(),
-    numberOfStars: new FormControl()
+    numberOfStars: new FormControl(),
+    detailerFname: new FormControl(),
+    detailerLname: new FormControl()
   });
 
 
-  constructor(private reviewService: ReviewService) {}
+  constructor(private reviewService: ReviewService) { }
 
   ngOnInit() {
-    this.reviewService.getDetailerReviews(this.detailerId).subscribe(res => {
+    this.reviewService.getDetailerReviews(this.detailer.id).subscribe(res => {
       this.reviews = res;
     })
     this.reviewInputStatus = this.reviewInput;
+    this.adminStatus = localStorage.getItem('adminStatus')
     console.log(this.reviewInputStatus)
   }
 
-  onSubmit(){
-    this.reviewCreate.controls.detailerId.setValue(this.detailerId);
-    this.reviewService.createReview(this.reviewCreate.value).subscribe(res =>{
-      this.reviewService.getDetailerReviews(this.detailerId).subscribe(res => {
+  onSubmit() {
+    this.reviewCreate.controls.detailerId.setValue(this.detailer.id);
+    
+    this.reviewCreate.controls.detailerFname.setValue(this.detailer.fName);
+
+    this.reviewCreate.controls.detailerLname.setValue(this.detailer.lName);
+
+
+
+    this.reviewService.createReview(this.reviewCreate.value).subscribe(res => {
+      this.reviewService.getDetailerReviews(this.detailer.id).subscribe(res => {
         this.reviews = res;
         this.reviewCreate.controls.reviewContent.setValue('');
         this.reviewCreate.controls.numberOfStars.setValue('');
       })
     })
-
   }
+
+  deleteReview(reviewId) {
+    this.reviewService.deleteReview(reviewId).subscribe(res => {
+      this.reviewService.getDetailerReviews(this.detailer.id).subscribe(res => {
+        this.reviews = res;
+        console.log(res)
+      })
+    })
+  }
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-display-detailer-profile',
@@ -9,7 +10,7 @@ export class DisplayDetailerProfileComponent implements OnInit {
 
   @Input() detailerView: any;
 
-  constructor() { }
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,16 @@ export class DisplayDetailerProfileComponent implements OnInit {
   }
 
   contact(){
+    
+    var contact = {
+      detailerId: this.detailerView.id,
+      detailerFname: this.detailerView.fName,
+      detailerLname: this.detailerView.lName
+    }
+    this.contactService.createContact(contact).subscribe(res => {
+      console.log(res);
+    })
+
     window.open('mailto:'+this.detailerView.emailAddress+'?subject=Wash Me Detailing Request');
   }
 

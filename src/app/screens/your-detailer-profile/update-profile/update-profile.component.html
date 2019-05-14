@@ -10,27 +10,46 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Your Services" formControlName="servicesOffered" required>
+        <textarea matInput placeholder="Your Services" formControlName="servicesOffered" required></textarea>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Pricing Information" formControlName="pricingInformation" required>
+        <textarea matInput placeholder="Pricing Information" formControlName="pricingInformation" required></textarea>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Availability" formControlName="availability" required>
+        <textarea matInput placeholder="Availability" formControlName="availability" required></textarea>
       </mat-form-field>
 
-      <mat-form-field>
-        <input matInput placeholder="WillTravel" formControlName="willTravel" required>
-      </mat-form-field>
+
 
       <mat-form-field>
-        <input matInput placeholder="State" formControlName="state" required>
+        <mat-select placeholder="Will Travel?" formControlName="willTravel">
+          <mat-option value=" true">Yes</mat-option>
+          <mat-option value="false">No</mat-option>
+        </mat-select>
       </mat-form-field>
 
+
+      <br>
+
       <mat-form-field>
-        <input matInput placeholder="City" formControlName="cities" required>
+        <mat-select matNativeControl formControlName="state" placeholder="State" required>
+
+          <mat-option *ngFor="let state of states" value="{{state}}" (click)="getCities()">{{state}}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+
+
+      <br>
+
+      <mat-form-field>
+        <mat-select matNativeControl formControlName="cities" placeholder="City" required>
+
+          <mat-option *ngFor="let city of cities" value="{{city}}">{{city}}</mat-option>
+
+        </mat-select>
       </mat-form-field>
 
       <button class="btn" mat-raised-button type="submit">Submit</button>

@@ -1,28 +1,29 @@
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
 
-  <mat-card>
+  <div fxFlex="70%">
+    <mat-card>
 
-  <h1> Your Detailer Profile </h1>
-  
-  <h3>Link To Imgur</h3>
-  <p>{{userProfile.linkToImgur}}</p>
-  
-  <h3>Services Offered</h3>
-  <p>{{userProfile.servicesOffered}}</p>
+      <h1> Your Detailer Profile </h1>
 
-  <h3>Availability</h3>
-  <p>{{userProfile.availability}}</p>
+      <h3>Link To Imgur</h3>
+      <p>{{userProfile.linkToImgur}}</p>
 
-  <h3>Pricing Information</h3>
-  <p>{{userProfile.pricingInformation}}</p>
+      <h3>Services Offered</h3>
+      <p>{{userProfile.servicesOffered}}</p>
 
-  <button mat-raised-button color="primary" (click) = "updateProfile()">Edit Profile</button>
+      <h3>Availability</h3>
+      <p>{{userProfile.availability}}</p>
 
-  <button mat-raised-button color="primary" (click) = "deleteProfile()">Delete Profile</button>
+      <h3>Pricing Information</h3>
+      <p>{{userProfile.pricingInformation}}</p>
 
-  <app-display-reviews [detailer] = "userProfile" [reviewInput] = "false"></app-display-reviews>
+      <button mat-raised-button color="primary" (click)="updateProfile()">Edit Profile</button>
 
-  </mat-card>
+      <button mat-raised-button color="primary" (click)="deleteProfile()">Delete Profile</button>
 
+      <app-display-reviews *ngIf="userProfile" [detailer]="userProfile" [reviewInput]="false"></app-display-reviews>
 
+    </mat-card>
 
-
+  </div>
+</div>

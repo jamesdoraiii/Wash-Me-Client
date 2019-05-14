@@ -32,6 +32,7 @@ export class DisplayReviewsComponent implements OnInit {
   constructor(private reviewService: ReviewService) { }
 
   ngOnInit() {
+    console.log("HEY HEY HEY",this.detailer);
     this.reviewService.getDetailerReviews(this.detailer.id).subscribe(res => {
       this.reviews = res;
     })

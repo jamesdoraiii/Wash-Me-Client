@@ -3,6 +3,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { DetailerService } from '../../../services/detailer.service';
 
 import { FormGroup, FormControl } from '@angular/forms';
+import data from '../../../../assets/locations/US_States_and_Cities.json';
 
 @Component({
   selector: 'app-update-profile',
@@ -10,6 +11,10 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./update-profile.component.css']
 })
 export class UpdateProfileComponent implements OnInit {
+
+  states = Object.keys(data);
+
+  cities: any;
 
   @Input() detailer: any;
 
@@ -23,7 +28,7 @@ export class UpdateProfileComponent implements OnInit {
     state: new FormControl('')
   })
 
-  detailerSend = {detailer: {}}
+  detailerSend = { detailer: {} }
 
   constructor(private detailerService: DetailerService) { }
 
@@ -37,17 +42,26 @@ export class UpdateProfileComponent implements OnInit {
     this.detailerSetup.controls.willTravel.setValue(this.detailer.willTravel);
     this.detailerSetup.controls.cities.setValue(this.detailer.cities);
     this.detailerSetup.controls.state.setValue(this.detailer.state);
-    
+
   }
 
   onSubmit() {
     this.detailerSend.detailer = this.detailerSetup.value;
 
-    this.detailerService.updateDetailerProfile(this.detailerSend).subscribe(res =>{
+    this.detailerService.updateDetailerProfile(this.detailerSend).subscribe(res => {
       console.log(res);
       this.updateEvent.emit();
 
     })
   }
+
+  getCities() {
+    var selectedState = this.detailerSetup.controls['state'].value;
+
+    this.cities = data[selectedState];
+    console.log(this.cities);
+
+  }
+
 
 }

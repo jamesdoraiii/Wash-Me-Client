@@ -1,18 +1,29 @@
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+
+
+<div fxFlex="40%">
 <h1>Reviews You Have Made</h1>
 
 <ul *ngFor="let review of userReviews">
     <mat-card>
-    <h1>Review about {{ review.detailerFname }} {{ review.detailerLname }}</h1>
+    <h4>Review about {{ review.detailerFname }} {{ review.detailerLname }}</h4>
     <p>Review: {{ review.reviewContent }} </p>
     <p>Stars: {{ review.numberOfStars }} </p>
+    <button class="btn" mat-raised-button (click)="deleteReview(review.id)">Delete</button>
     </mat-card>
 </ul>
+</div>
 
-<br>
+<div fxFlex="5%"></div>
 
+
+<div fxFlex="40%">
 <h1>Detailers You Have Contacted</h1>
 <ul *ngFor="let contact of userContacts">
     <mat-card>
-    <p>You contacted {{ contact.detailerFname }} {{ contact.detailerLname }} on {{contact.createdAt}}</p>
+    <p>You contacted {{ contact.detailerFname }} {{ contact.detailerLname }} on {{contact.createdAt | slice : 0 : 10}}</p>
     </mat-card>
 </ul>
+</div>
+
+</div>

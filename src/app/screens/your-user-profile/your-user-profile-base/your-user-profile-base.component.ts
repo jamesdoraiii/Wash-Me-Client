@@ -28,4 +28,13 @@ export class YourUserProfileBaseComponent implements OnInit {
       this.userContacts = res;
     });
   }
+
+  deleteReview(reviewId) {
+    this.reviewService.deleteReview(reviewId).subscribe(res => {
+      this.reviewService.getUserReviews().subscribe(res => {
+        this.userReviews = res;
+        console.log(res)
+      })
+    })
+  }
 }

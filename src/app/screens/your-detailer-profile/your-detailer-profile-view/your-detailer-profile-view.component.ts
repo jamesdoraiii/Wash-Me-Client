@@ -15,7 +15,6 @@ export class YourDetailerProfileViewComponent implements OnInit {
 
   ngOnInit() {
     this.detailerService.findSpecificDetailer(localStorage.getItem('userId')).subscribe( res => {
-      console.log(res)
       this.userProfile = res;
     })
   }

@@ -1,0 +1,29 @@
+
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" *ngIf = "detailerView">
+
+  <div fxFlex="70%">
+
+    <mat-card>
+
+      <h1> {{detailerView.fName}}'s Profile </h1>
+
+      <h3>Link To Imgur</h3>
+      <p>{{detailerView.linkToImgur}}</p>
+
+      <h3>Services Offered</h3>
+      <p>{{detailerView.servicesOffered}}</p>
+
+      <h3>Availability</h3>
+      <p>{{detailerView.availability}}</p>
+
+      <h3>Pricing Information</h3>
+      <p>{{detailerView.pricingInformation}}</p>
+
+      <button mat-raised-button color="primary" (click)="contact()">Contact This Detailer</button>
+
+      <app-display-reviews [detailer]="detailerView" [reviewInput]="true"></app-display-reviews>
+
+    </mat-card>
+
+  </div>
+</div>

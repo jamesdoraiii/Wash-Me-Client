@@ -62,6 +62,7 @@ import { DetailerService } from './services/detailer.service'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UpdateProfileComponent } from './screens/your-detailer-profile/update-profile/update-profile.component';
 import { ContactService } from './services/contact.service';
+import { ViewDetailerProfileOnUserPageComponent } from './screens/your-user-profile/view-detailer-profile-on-user-page/view-detailer-profile-on-user-page.component';
 
 
 @NgModule({
@@ -83,7 +84,8 @@ import { ContactService } from './services/contact.service';
     DetailerProfileSetupFormComponent,
     DisplayDetailerProfileComponent,
     DisplayReviewsComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    ViewDetailerProfileOnUserPageComponent
   ],
   imports: [
     BrowserModule,

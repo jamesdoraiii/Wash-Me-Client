@@ -19,13 +19,13 @@ export class UpdateProfileComponent implements OnInit {
   @Input() detailer: any;
 
   detailerSetup = new FormGroup({
-    linkToImgur: new FormControl(''),
-    servicesOffered: new FormControl(''),
-    pricingInformation: new FormControl(''),
-    availability: new FormControl(''),
-    willTravel: new FormControl(''),
-    cities: new FormControl(''),
-    state: new FormControl('')
+    linkToImgur: new FormControl(null),
+    servicesOffered: new FormControl(null),
+    pricingInformation: new FormControl(null),
+    availability: new FormControl(null),
+    willTravel: new FormControl(null),
+    cities: new FormControl(null),
+    state: new FormControl(null)
   })
 
   detailerSend = { detailer: {} }
@@ -35,13 +35,14 @@ export class UpdateProfileComponent implements OnInit {
   @Output() updateEvent = new EventEmitter();
 
   ngOnInit() {
+
     this.detailerSetup.controls.linkToImgur.setValue(this.detailer.linkToImgur);
     this.detailerSetup.controls.servicesOffered.setValue(this.detailer.servicesOffered);
     this.detailerSetup.controls.pricingInformation.setValue(this.detailer.pricingInformation);
     this.detailerSetup.controls.availability.setValue(this.detailer.availability);
-    this.detailerSetup.controls.willTravel.setValue(this.detailer.willTravel);
-    this.detailerSetup.controls.cities.setValue(this.detailer.cities);
-    this.detailerSetup.controls.state.setValue(this.detailer.state);
+    // this.detailerSetup.controls.willTravel.setValue(this.detailer.willTravel);
+    // this.detailerSetup.controls.cities.setValue(this.detailer.cities);
+    // this.detailerSetup.controls.state.setValue(this.detailer.state);
 
   }
 

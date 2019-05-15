@@ -17,6 +17,9 @@
       <h3>Pricing Information</h3>
       <p>{{userProfile.pricingInformation}}</p>
 
+      <h3>Your Profile Currently Appears in searches for:</h3>
+      <p>{{ userProfile.cities }}, {{ userProfile.state }} </p>
+
       <button mat-raised-button color="primary" (click)="updateProfile()">Edit Profile</button>
 
       <button mat-raised-button color="primary" (click)="deleteProfile()">Delete Profile</button>

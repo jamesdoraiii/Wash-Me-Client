@@ -35,6 +35,18 @@ export class ContactService {
     return this.http.get<any>(this.dbUrl + "/findusercontacts", httpSetup);
     }
 
+    deleteProfileContacts(detailerId): Observable<any> {
+      const httpSetup = {
+        headers: new HttpHeaders({
+          "Content-Type": "application/json",
+          Authorization: window.localStorage.getItem("token")
+  
+        })
+      };
+      return this.http.delete<any>(this.dbUrl + "/deletecontactunderprofile/" + detailerId, httpSetup)
+  
+    }
+
 // findDetailerContacts(): Observable<any>{
 //   return this.http.get<any>()
 // }

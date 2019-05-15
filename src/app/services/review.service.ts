@@ -54,4 +54,16 @@ export class ReviewService {
     return this.http.delete<any>(this.dbUrl + "/deletereview/" + reviewId, httpSetup)
   }
 
+  deleteProfileReviews(detailerId): Observable<any> {
+    const httpSetup = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: window.localStorage.getItem("token")
+
+      })
+    };
+    return this.http.delete<any>(this.dbUrl + "/deletereviewunderprofile/" + detailerId, httpSetup)
+
+  }
+
 }

@@ -13,6 +13,10 @@ export class YourUserProfileBaseComponent implements OnInit {
 
   userContacts: any;
 
+  status = 'base';
+
+  detailerId = null;
+
   constructor(
     private reviewService: ReviewService,
     private contactService: ContactService
@@ -36,5 +40,18 @@ export class YourUserProfileBaseComponent implements OnInit {
         console.log(res)
       })
     })
+  }
+
+  viewProfile(detailerId) {
+    this.detailerId = detailerId;
+    console.log(this.detailerId)
+    this.status = 'profile';
+    
+
+  }
+
+  back(){
+    this.status = 'base';
+    this.detailerId = null;
   }
 }

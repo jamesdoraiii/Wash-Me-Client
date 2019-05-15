@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { UserService } from "../../../services/user.service";
+import { FormGroup, FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: "app-splash-screen-base",
@@ -12,24 +14,33 @@ export class SplashScreenBaseComponent implements OnInit {
 
   //This variable is bound using ng model to the login form.
   //This is the information that we will send to the user service in order to login
-  loginInfo = {
-    user: {
-      username: "",
-      pass: ""
-    }
-  };
+  loginInfo = new FormGroup({
+
+    username: new FormControl(''),
+    pass: new FormControl('')
+  });
+
+  loginSend = { user: {} }
+
+
 
   //This variable is bound using ng model to the login form.
   //This is the information that we will send to the user service in order to login
-  signUpInfo = {
-    user: {
-      username: "",
-      pass: "",
-      emailAddress: "",
-      fName: "",
-      lName: ""
-    }
-  };
+  signUpInfo = new FormGroup({
+
+    username: new FormControl('', [Validators.required]),
+    pass: new FormControl('', [Validators.required,
+    Validators.minLength(6)]),
+    emailAddress: new FormControl('', [Validators.required]),
+    fName: new FormControl('', [Validators.required]),
+    lName: new FormControl('', [Validators.required])
+
+  });
+
+  signUpSend = { user: {} }
+
+  user = {};
+
 
   @Output() messageEvent = new EventEmitter<any>();
 
@@ -63,9 +74,12 @@ export class SplashScreenBaseComponent implements OnInit {
   //This function will take the login information and send it to the database. The user will then be logged in and brought to the homepage
   sendLogin() {
 
-    console.log(this.loginInfo);
+    let liData = { user: this.loginInfo.value }
 
-    this.userService.logIn(this.loginInfo).subscribe(res => {
+    this.loginSend.user =
+      this.loginInfo.value;
+
+    this.userService.logIn(liData).subscribe(res => {
       console.log(res);
       window.localStorage.setItem('token', res.sessionToken);
       window.localStorage.setItem('detailerStatus', res.user.isDetailer);
@@ -79,9 +93,15 @@ export class SplashScreenBaseComponent implements OnInit {
 
   //This function will take the login information and send it to the database. The user will then be logged in and brought to the homepage
 
+
   sendSignUp() {
 
-    this.userService.signUp(this.signUpInfo).subscribe(res => {
+    let siData = { user: this.signUpInfo.value }
+
+    this.signUpSend.user =
+      this.signUpInfo.value;
+    console.log(this.signUpSend.user)
+    this.userService.signUp(siData).subscribe(res => {
       console.log(res);
       window.localStorage.setItem('token', res.sessionToken);
       window.localStorage.setItem('detailerStatus', res.user.isDetailer);

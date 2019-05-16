@@ -21,7 +21,12 @@
       <div class="jumbotron2" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%"
         fxLayoutAlign="center">
 
-        <img style="width:700px;height:320px;" src="../../../../assets/logoBlack.png">
+        <div fxFlex="25%">
+
+          <img class="logo" style="width:700px;height:320px;" src="../../../../assets/logoBlack.png">
+        </div>
+
+
         <div class="jumSmlBox" fxFlex="25%">
           <br>
           <br>
@@ -137,22 +142,28 @@
 
 
     <div class="login">
-      <h1>Login</h1>
+      <h1 class="liformh1">Login</h1>
 
 
       <form [formGroup]="loginInfo">
-        <mat-form-field>
+        <mat-form-field class="inputForm">
           <input formControlName="username" matInput placeholder="Username">
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field class="inputForm">
           <input formControlName="pass" matInput placeholder="Password" type="password">
         </mat-form-field>
         <br>
-        <button class="btn" mat-raised-button (click)="sendLogin()">Submit</button>
         <br>
-        <p>Not a user yet? Sign Up!</p>
-        <button class="btn" mat-raised-button (click)="switchToSignup()">SignUp</button>
+        <br>
+        <br>
+        <div class="libtns">
+          <button class="btn" mat-raised-button (click)="sendLogin()">Submit</button>
+          <br>
+          <hr>
+          <br>
+          <button class="btn" mat-raised-button (click)="switchToSignup()">SignUp</button>
+        </div>
       </form>
     </div>
 
@@ -163,38 +174,41 @@
 
 
     <div class="signup">
-      <h1>SignUp</h1>
+      <h1 class="suformh1">SignUp</h1>
       <form [formGroup]="signUpInfo">
-        <mat-form-field>
+        <mat-form-field class="inputForm">
           <input formControlName="username" matInput placeholder="Username">
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field class="inputForm">
           <input formControlName="pass" matInput placeholder="Password" type="password">
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field class="inputForm">
           <input matInput placeholder="Confirm Password" type="password">
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field class="inputForm">
           <input formControlName="emailAddress" matInput placeholder="Email Address">
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field class="inputForm">
           <input formControlName="fName" matInput placeholder="First Name">
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field class="inputForm">
           <input formControlName="lName" matInput placeholder="Last Name">
         </mat-form-field>
-
-
         <br>
-        <button class="btn" mat-raised-button (click)="sendSignUp()">Submit</button>
-
-        <p>Already a user? Log In!</p>
-        <button class="btn" mat-raised-button (click)="switchToLogin()">Log In</button>
+        <br>
+        <br>
+        <div class="subtns">
+          <button class="btn" mat-raised-button (click)="sendSignUp()">Submit</button>
+          <br>
+          <hr>
+          <br>
+          <button class="btn" mat-raised-button (click)="switchToLogin()">Log In</button>
+        </div>
       </form>
     </div>
 

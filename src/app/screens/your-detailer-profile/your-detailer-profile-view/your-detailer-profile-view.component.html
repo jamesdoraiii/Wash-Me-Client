@@ -1,32 +1,39 @@
-<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+<div class="bg">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
 
-  <div fxFlex="70%">
-    <mat-card>
+    <div fxFlex="40%">
+      <mat-card class="card">
 
-      <h1> Your Detailer Profile </h1>
+        <h1> Your Detailer Profile </h1>
 
-      <h3>Examples of Your Work</h3>
-      <a mat-raised-button href= "{{userProfile.linkToImgur}}" target = "_blank">View Imgur</a>
+        <h3>Examples of Your Work</h3>
+        <a class="imgrBtn" mat-raised-button href="{{userProfile.linkToImgur}}" target="_blank">View Imgur</a>
 
-      <h3>Services Offered</h3>
-      <p>{{userProfile.servicesOffered}}</p>
+        <h3>Services Offered</h3>
+        <p>{{userProfile.servicesOffered}}</p>
 
-      <h3>Availability</h3>
-      <p>{{userProfile.availability}}</p>
+        <h3>Availability</h3>
+        <p>{{userProfile.availability}}</p>
 
-      <h3>Pricing Information</h3>
-      <p>{{userProfile.pricingInformation}}</p>
+        <h3>Pricing Information</h3>
+        <p>{{userProfile.pricingInformation}}</p>
 
-      <h3>Your Profile Currently Appears in searches for:</h3>
-      <p>{{ userProfile.cities }}, {{ userProfile.state }} </p>
+        <h3>Your Profile Currently Appears in searches for:</h3>
+        <p>{{ userProfile.cities }}, {{ userProfile.state }} </p>
 
-      <button mat-raised-button color="primary" (click)="updateProfile()">Edit Profile</button>
+        <button mat-raised-button class="btn" (click)="updateProfile()">Edit Profile</button>
 
-      <button mat-raised-button color="primary" (click)="deleteProfile()">Delete Profile</button>
+        <button mat-raised-button class="btn" (click)="deleteProfile()">Delete Profile</button>
 
-      <app-display-reviews *ngIf="userProfile" [detailer]="userProfile" [reviewInput]="false"></app-display-reviews>
+        <app-display-reviews *ngIf="userProfile" [detailer]="userProfile" [reviewInput]="false"></app-display-reviews>
 
-    </mat-card>
+      </mat-card>
 
+    </div>
   </div>
 </div>

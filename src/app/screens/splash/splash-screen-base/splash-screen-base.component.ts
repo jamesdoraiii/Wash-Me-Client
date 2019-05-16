@@ -16,8 +16,8 @@ export class SplashScreenBaseComponent implements OnInit {
   //This is the information that we will send to the user service in order to login
   loginInfo = new FormGroup({
 
-    username: new FormControl(''),
-    pass: new FormControl('')
+    username: new FormControl(null),
+    pass: new FormControl(null)
   });
 
   loginSend = { user: {} }
@@ -28,12 +28,12 @@ export class SplashScreenBaseComponent implements OnInit {
   //This is the information that we will send to the user service in order to login
   signUpInfo = new FormGroup({
 
-    username: new FormControl('', [Validators.required]),
-    pass: new FormControl('', [Validators.required,
+    username: new FormControl(null, [Validators.required]),
+    pass: new FormControl(null, [Validators.required,
     Validators.minLength(6)]),
-    emailAddress: new FormControl('', [Validators.required]),
-    fName: new FormControl('', [Validators.required]),
-    lName: new FormControl('', [Validators.required])
+    emailAddress: new FormControl(null, [Validators.required]),
+    fName: new FormControl(null, [Validators.required]),
+    lName: new FormControl(null, [Validators.required])
 
   });
 

@@ -53,5 +53,14 @@ export class YourUserProfileBaseComponent implements OnInit {
   back(){
     this.status = 'base';
     this.detailerId = null;
+
+    this.reviewService.getUserReviews().subscribe(res => {
+      console.log(res);
+      this.userReviews = res;
+    });
+    this.contactService.findUserContacts().subscribe(res => {
+      console.log(res);
+      this.userContacts = res;
+    });
   }
 }

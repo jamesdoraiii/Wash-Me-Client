@@ -12,7 +12,7 @@ import data from '../../../../assets/locations/US_States_and_Cities.json';
 })
 export class DetailerSearchFormComponent implements OnInit {
 
-  states = Object.keys(data);
+  states = Object.keys(data).sort();
 
   cities: any;
 
@@ -46,7 +46,7 @@ export class DetailerSearchFormComponent implements OnInit {
     console.log(this.searchInfo)
     var selectedState = this.searchInfo.state;
 
-    this.cities = data[selectedState];
+    this.cities = data[selectedState].sort();
     console.log(this.cities);
 
   }

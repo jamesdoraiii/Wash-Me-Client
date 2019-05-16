@@ -16,7 +16,7 @@ import data from '../../../../assets/locations/US_States_and_Cities.json';
 })
 export class YourDetailerProfileSetupComponent implements OnInit {
 
-  states = Object.keys(data);
+  states = Object.keys(data).sort();
 
   cities: any;
 
@@ -46,11 +46,17 @@ export class YourDetailerProfileSetupComponent implements OnInit {
   onSubmit() {
     this.detailerSend.detailer = this.detailerSetup.value;
 
+    if(this.detailerSetup.controls.linkToImgur.value.slice(0,17) == 'https://imgur.com'){
+
     this.detailerService.createDetailerProfile(this.detailerSend).subscribe(res => {
       console.log(res);
       localStorage.setItem("detailerStatus", "true");
       this.messageEvent.emit();
-    })
+    })}
+
+    else{
+      alert("Please make sure you are submitting a valid imgur album link");
+    }
 
     this.userService.isDetailerOn(localStorage.getItem('userId')).subscribe();
 
@@ -59,7 +65,7 @@ export class YourDetailerProfileSetupComponent implements OnInit {
   getCities() {
     var selectedState = this.detailerSetup.controls['state'].value;
 
-    this.cities = data[selectedState];
+    this.cities = data[selectedState].sort();
     console.log(this.cities);
 
   }

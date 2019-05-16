@@ -1,12 +1,11 @@
-<button mat-raised-button color="primary" (click)="back()">Return to Search Results</button>
 
-<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" *ngIf = "detailerView">
 
   <div fxFlex="70%">
 
     <mat-card>
 
-      <h1> {{detailerView.fName}}'s Profile </h1>
+      <h1> {{detailerView.fName}}'s Detailer Profile </h1>
 
       <h3>View Some Examples of {{detailerView.fName}}'s Work</h3>
       <a mat-raised-button href= "{{detailerView.linkToImgur}}" target = "_blank">View Imgur</a>

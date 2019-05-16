@@ -70,10 +70,17 @@ export class DetailerService {
   }
 
   searchByLocation(location): Observable<any> {
+    const httpSetup = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: window.localStorage.getItem("token")
+      })
+    };
+
     return this.http.post<any>(
       this.dbUrl + "/searchbylocation",
       location,
-      httpOptions
+      httpSetup
     );
   }
 
@@ -84,9 +91,21 @@ export class DetailerService {
         Authorization: window.localStorage.getItem("token")
       })
     };
-    return this.http.post<any>(
+    return this.http.get<any>(
       this.dbUrl + "/findspecificdetailer/" + id,
-      location,
+      httpSetup
+    );
+  }
+
+  findSpecificDetailerUserPage(id): Observable<any> {
+    const httpSetup = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: window.localStorage.getItem("token")
+      })
+    };
+    return this.http.get<any>(
+      this.dbUrl + "/findspecificdetaileruserpage/" + id,
       httpSetup
     );
   }

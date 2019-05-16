@@ -40,6 +40,10 @@ export class YourDetailerProfileBaseComponent implements OnInit {
 
   updateComplete(){
     this.status = 'true';
+    this.detailerService.findSpecificDetailer(localStorage.getItem('userId')).subscribe( res => {
+      console.log(res)
+      this.detailer = res;
+    })
   }
 
 }

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type' : 'application/json'
+    'Content-Type': 'application/json'
   })
 }
 
@@ -19,28 +19,31 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  signUp(signUpInfo) : Observable<any> {
-    return this.http.post<any>(this.dbUrl+'/createuser', signUpInfo, httpOptions);
+  signUp(signUpInfo): Observable<any> {
+
+    console.log('reacting service')
+
+    return this.http.post<any>(this.dbUrl + '/createuser', signUpInfo, httpOptions);
 
   }
 
-  logIn(loginInfo) : Observable<any> {
+  logIn(loginInfo): Observable<any> {
 
-    return this.http.post<any>(this.dbUrl+'/signin', loginInfo, httpOptions);
-    
+    return this.http.post<any>(this.dbUrl + '/signin', loginInfo, httpOptions);
+
   }
 
-  isDetailerOn(userid) : Observable<any> {
-    console.log("this is in the service",userid)
+  isDetailerOn(userid): Observable<any> {
+    console.log("this is in the service", userid)
 
-    console.log(this.dbUrl+'/isdetaileron/' + userid)
-    return this.http.get<any>(this.dbUrl+'/isdetaileron/' + userid);
-    
+    console.log(this.dbUrl + '/isdetaileron/' + userid)
+    return this.http.get<any>(this.dbUrl + '/isdetaileron/' + userid);
+
   }
 
-  isDetailerOff(userid) : Observable<any> {
+  isDetailerOff(userid): Observable<any> {
 
-    return this.http.get<any>(this.dbUrl+'/isdetaileroff/'+userid);
-    
+    return this.http.get<any>(this.dbUrl + '/isdetaileroff/' + userid);
+
   }
 }

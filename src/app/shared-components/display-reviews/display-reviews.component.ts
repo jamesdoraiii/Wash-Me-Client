@@ -22,8 +22,8 @@ export class DisplayReviewsComponent implements OnInit {
 
   reviewCreate = new FormGroup({
     detailerId: new FormControl(),
-    reviewContent: new FormControl(),
-    numberOfStars: new FormControl(),
+    reviewContent: new FormControl(null),
+    numberOfStars: new FormControl(null),
     detailerFname: new FormControl(),
     detailerLname: new FormControl()
   });
@@ -32,7 +32,7 @@ export class DisplayReviewsComponent implements OnInit {
   constructor(private reviewService: ReviewService) { }
 
   ngOnInit() {
-    console.log("HEY HEY HEY",this.detailer);
+    console.log("HEY HEY HEY",this.detailer.id);
     this.reviewService.getDetailerReviews(this.detailer.id).subscribe(res => {
       this.reviews = res;
     })
@@ -53,8 +53,8 @@ export class DisplayReviewsComponent implements OnInit {
     this.reviewService.createReview(this.reviewCreate.value).subscribe(res => {
       this.reviewService.getDetailerReviews(this.detailer.id).subscribe(res => {
         this.reviews = res;
-        this.reviewCreate.controls.reviewContent.setValue('');
-        this.reviewCreate.controls.numberOfStars.setValue('');
+        this.reviewCreate.controls.reviewContent.setValue(null);
+        this.reviewCreate.controls.numberOfStars.setValue(null);
       })
     })
   }

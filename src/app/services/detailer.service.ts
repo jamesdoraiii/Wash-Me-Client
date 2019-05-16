@@ -70,10 +70,17 @@ export class DetailerService {
   }
 
   searchByLocation(location): Observable<any> {
+    const httpSetup = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: window.localStorage.getItem("token")
+      })
+    };
+
     return this.http.post<any>(
       this.dbUrl + "/searchbylocation",
       location,
-      httpOptions
+      httpSetup
     );
   }
 

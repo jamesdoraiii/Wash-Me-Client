@@ -12,7 +12,7 @@ import data from '../../../../assets/locations/US_States_and_Cities.json';
 })
 export class UpdateProfileComponent implements OnInit {
 
-  states = Object.keys(data);
+  states = Object.keys(data).sort();
 
   cities: any;
 
@@ -47,19 +47,28 @@ export class UpdateProfileComponent implements OnInit {
   }
 
   onSubmit() {
+
     this.detailerSend.detailer = this.detailerSetup.value;
+
+  
+    if(this.detailerSetup.controls.linkToImgur.value.slice(0,17) == 'https://imgur.com'){
 
     this.detailerService.updateDetailerProfile(this.detailerSend).subscribe(res => {
       console.log(res);
       this.updateEvent.emit();
 
-    })
+    })}
+
+    else{
+      alert("Please make sure you are submitting a valid imgur album link");
+    }
+
   }
 
   getCities() {
     var selectedState = this.detailerSetup.controls['state'].value;
 
-    this.cities = data[selectedState];
+    this.cities = data[selectedState].sort();
     console.log(this.cities);
 
   }

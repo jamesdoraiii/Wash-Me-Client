@@ -26,6 +26,10 @@
 
 }
 
+/* .logo{
+margin-right: 2em;
+} */
+
 .jumbotron2{
     color: black;
     padding: 2%;
@@ -33,6 +37,7 @@
 
 .jumSmlBox{
     margin-top:20%;
+    margin-left: 9%;
 }
 .btn {
     color:  rgb(251, 240, 87) !important;
@@ -56,7 +61,15 @@
     background-size: cover;
     height: 100vh;
 
+
  }
+
+.loginInfo {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
 
  .login{
      background-color: rgba(255, 255, 255, 0.637);
@@ -64,7 +77,7 @@
      top:20%;
      margin-left: auto;
      margin-right: auto;
-     width:12%;
+     width:20%;
      padding: 5em;
      
  }
@@ -79,20 +92,47 @@
 
 }
 
+.signUpInfo {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
 .signup {
     background-color: rgba(255, 255, 255, 0.637);
     position: relative;
     top:20%;
     margin-left: auto;
     margin-right: auto;
-    width:12%;
+    width:20%;
     padding: 5em;
     
 
 }
 
+.liformh1{
+    margin-left: 45%;
+    margin-right: 65%;
+}
 
+.suformh1{
+    margin-left: 40%;
+    margin-right: 60%;
+}
 
+.inputForm{
+width: 100%;
+}
+
+.libtns {
+    margin-left: 45%;
+    margin-right: 65%; 
+}
+
+.subtns {
+    margin-left: 45%;
+    margin-right: 65%;   
+}
 
 /* 
  contact */

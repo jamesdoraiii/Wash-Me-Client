@@ -1,35 +1,44 @@
-<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" *ngIf = "status == 'base'">
+<div class="bg">
+    <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center"
+        *ngIf="status == 'base'">
 
 
-<div fxFlex="40%">
-<h1>Reviews You Have Made</h1>
+        <div fxFlex="40%">
+            <h1>Reviews You Have Made</h1>
 
-<ul *ngFor="let review of userReviews">
-    <mat-card>
-    <h4>Review about {{ review.detailerFname }} {{ review.detailerLname }}</h4>
-    <p>Review: {{ review.reviewContent }} </p>
-    <p>Stars: {{ review.numberOfStars }} </p>
-    <button class="btn" mat-raised-button (click)="deleteReview(review.id)">Delete</button>
-    <button class="btn" mat-raised-button (click)="viewProfile(review.detailerId)">View Detailer's Profile</button>
-    </mat-card>
-</ul>
+            <ul *ngFor="let review of userReviews">
+                <mat-card>
+                    <h4>Review about {{ review.detailerFname }} {{ review.detailerLname }}</h4>
+                    <p>Review: {{ review.reviewContent }} </p>
+                    <p>Stars: {{ review.numberOfStars }} </p>
+                    <button class="btn" mat-raised-button (click)="deleteReview(review.id)">Delete</button>
+                    <button class="btn" mat-raised-button (click)="viewProfile(review.detailerId)">View Detailer's
+                        Profile</button>
+                </mat-card>
+            </ul>
+        </div>
+
+        <div fxFlex="5%"></div>
+
+
+        <div fxFlex="40%">
+            <h1>Detailers You Have Contacted</h1>
+            <ul *ngFor="let contact of userContacts">
+                <mat-card>
+                    <p>You contacted {{ contact.detailerFname }} {{ contact.detailerLname }} on
+                        {{contact.createdAt | slice : 0 : 10}}</p>
+                    <button class="btn" mat-raised-button (click)="viewProfile(contact.detailerId)">View Detailer's
+                        Profile</button>
+                </mat-card>
+            </ul>
+        </div>
+
+    </div>
+
+    <button class="backBtn" mat-raised-button (click)="back()" *ngIf="status == 'profile'">Back to Your User
+        Page</button>
+
+    <app-view-detailer-profile-on-user-page class="otherPage" [detailerId]="detailerId" *ngIf="detailerId">
+
+    </app-view-detailer-profile-on-user-page>
 </div>
-
-<div fxFlex="5%"></div>
-
-
-<div fxFlex="40%">
-<h1>Detailers You Have Contacted</h1>
-<ul *ngFor="let contact of userContacts">
-    <mat-card>
-    <p>You contacted {{ contact.detailerFname }} {{ contact.detailerLname }} on {{contact.createdAt | slice : 0 : 10}}</p>
-    <button class="btn" mat-raised-button (click)="viewProfile(contact.detailerId)">View Detailer's Profile</button>
-    </mat-card>
-</ul>
-</div>
-
-</div>
-
-
-<button class="btn" mat-raised-button (click)="back()" *ngIf = "status == 'profile'">Back to Your User Page</button>
-<app-view-detailer-profile-on-user-page [detailerId] = "detailerId" *ngIf = "detailerId"></app-view-detailer-profile-on-user-page>

@@ -1,7 +1,53 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
-}
+.bg { 
+    background-image: url(../../../../assets/car1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120vh;
+font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+  .btn {
+    margin-right: 3%;
+    color:  rgb(251, 240, 87) !important;
+    background-color: black;
+    
+  }
+  .btn:hover {
+    color:  rgb(251, 240, 87)  !important;
+    background: black;;
+    box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+    -webkit-box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+    -moz-box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+  
+  }
+
+
+  .backBtn {
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-right:5%;
+    color:  rgb(251, 240, 87) !important;
+    background-color: black;
+    z-index: 1;
+    
+  }
+  .backBtn:hover {
+    color:  rgb(251, 240, 87)  !important;
+    background: black;
+    box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+    -webkit-box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+    -moz-box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
+  
+  }
+
+  .otherPage {
+    z-index: -1;
+
+  }
+
+  
 
 ul{
     list-style: none;

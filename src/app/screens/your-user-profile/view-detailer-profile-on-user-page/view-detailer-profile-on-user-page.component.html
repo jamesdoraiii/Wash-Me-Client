@@ -1,5 +1,5 @@
-
-<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" *ngIf = "detailerView">
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center"
+  *ngIf="detailerView">
 
   <div fxFlex="70%">
 
@@ -8,7 +8,7 @@
       <h1> {{detailerView.fName}}'s Detailer Profile </h1>
 
       <h3>View Some Examples of {{detailerView.fName}}'s Work</h3>
-      <a mat-raised-button href= "{{detailerView.linkToImgur}}" target = "_blank">View Imgur</a>
+      <a mat-raised-button href="{{detailerView.linkToImgur}}" target="_blank">View Imgur</a>
 
       <h3>Services Offered</h3>
       <p>{{detailerView.servicesOffered}}</p>

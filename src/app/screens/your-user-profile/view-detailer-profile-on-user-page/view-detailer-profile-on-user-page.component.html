@@ -1,29 +1,49 @@
+<div class="bg">
+  <div class="jumbotron">
+    <br>
+    <h1 class="hi"> Checkout {{detailerView.fName}}'s profile! </h1>
+    <h2 class="blerb">Maybe you will find the detailer of your dreams!</h2>
 
-<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" *ngIf = "detailerView">
+  </div>
 
-  <div fxFlex="70%">
+  <br>
+  <button class="btn" mat-raised-button (click)="back()" *ngIf="status == 'profile'">Back to Your User Page</button>
+  <br>
+  <br>
 
-    <mat-card>
 
-      <h1> {{detailerView.fName}}'s Detailer Profile </h1>
 
-      <h3>View Some Examples of {{detailerView.fName}}'s Work</h3>
-      <a mat-raised-button href= "{{detailerView.linkToImgur}}" target = "_blank">View Imgur</a>
 
-      <h3>Services Offered</h3>
-      <p>{{detailerView.servicesOffered}}</p>
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
 
-      <h3>Availability</h3>
-      <p>{{detailerView.availability}}</p>
+    <div fxFlex="40%">
 
-      <h3>Pricing Information</h3>
-      <p>{{detailerView.pricingInformation}}</p>
+      <mat-card class="card">
 
-      <button mat-raised-button color="primary" (click)="contact()">Contact This Detailer</button>
+        <h3>View Some Examples of {{detailerView.fName}}'s Work</h3>
+        <a class="imgrBtn" mat-raised-button href="{{detailerView.linkToImgur}}" target="_blank">View Imgur</a>
 
-      <app-display-reviews [detailer]="detailerView" [reviewInput]="true"></app-display-reviews>
+        <h3>Services Offered</h3>
+        <p>{{detailerView.servicesOffered}}</p>
 
-    </mat-card>
+        <h3>Availability</h3>
+        <p>{{detailerView.availability}}</p>
 
+        <h3>Pricing Information</h3>
+        <p>{{detailerView.pricingInformation}}</p>
+        <br>
+
+        <button mat-raised-button class="btn" (click)="contact()">Contact This Detailer</button>
+        <br>
+        <br>
+        <mat-divider></mat-divider>
+        <div class="reviews">
+          <app-display-reviews [detailer]="detailerView" [reviewInput]="true"></app-display-reviews>
+        </div>
+      </mat-card>
+      <br>
+      <br>
+      <br>
+    </div>
   </div>
 </div>

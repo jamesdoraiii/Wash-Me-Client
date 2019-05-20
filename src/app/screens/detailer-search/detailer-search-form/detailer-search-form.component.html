@@ -1,8 +1,8 @@
 <div class="detailerSearch">
   <div class="content">
     <h1> Search for a Detailer in Your Area </h1>
-    <mat-form-field>
-      <mat-select matNativeControl placeholder="State" required [(ngModel)]="searchInfo.state">
+    <mat-form-field class="info">
+      <mat-select  matNativeControl placeholder="State" required [(ngModel)]="searchInfo.state">
 
         <mat-option *ngFor="let state of states" value="{{state}}" (click)="getCities()">
           {{state}}</mat-option>
@@ -12,7 +12,7 @@
 
 
     <br>
-    <mat-form-field>
+    <mat-form-field class="info">
       <mat-select matNativeControl placeholder="City" [(ngModel)]="searchInfo.cities" required>
 
         <mat-option *ngFor="let city of cities" value="{{city}}">{{city}}</mat-option>

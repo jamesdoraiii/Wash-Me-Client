@@ -9,11 +9,10 @@ body{
     color: black;
     background-color: rgb(251, 240, 87);
     height: 20%;
-    position: relative;
+    position: fixed bottom;
     left: 0;
     bottom: 0;
     width: 100%;
-
 }
 
 .footerInfo {

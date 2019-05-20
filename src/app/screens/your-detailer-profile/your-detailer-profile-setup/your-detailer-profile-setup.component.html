@@ -1,27 +1,30 @@
 <div class="pagecontent-signup">
+  <br>
+  <br>
+  <br>
   <div class="signup">
 
-    <h3>You do not have a detailer profile setup yet. Complete the form below to begin advertising your services.</h3>
+    <h2>Complete the form below to setup your detailer profile.</h2>
 
     <form [formGroup]="detailerSetup" (ngSubmit)="onSubmit()">
 
-      <mat-form-field>
+      <mat-form-field class="formflds">
         <input matInput placeholder="Link To Your Imgur" formControlName="linkToImgur" required>
       </mat-form-field>
       <br>
-      <mat-form-field>
+      <mat-form-field class="formflds">
         <textarea matInput placeholder="Your Services" formControlName="servicesOffered" required></textarea>
       </mat-form-field>
       <br>
-      <mat-form-field>
+      <mat-form-field class="formflds">
         <textarea matInput placeholder="Pricing Information" formControlName="pricingInformation" required></textarea>
       </mat-form-field>
       <br>
-      <mat-form-field>
+      <mat-form-field class="formflds">
         <textarea matInput placeholder="Availability" formControlName="availability" required></textarea>
       </mat-form-field>
       <br>
-      <mat-form-field>
+      <mat-form-field class="formflds">
         <mat-select matNativeControl placeholder="Will Travel?" formControlName="willTravel">
           <mat-option value="true">Yes</mat-option>
           <mat-option value="false">No</mat-option>
@@ -35,7 +38,7 @@
         <input matInput placeholder="State" formControlName="state" required>
       </mat-form-field> -->
 
-      <mat-form-field>
+      <mat-form-field class="formflds">
         <mat-select matNativeControl formControlName="state" placeholder="State" required>
 
           <mat-option *ngFor="let state of states" value="{{state}}" (click)="getCities()">{{state}}</mat-option>
@@ -45,18 +48,20 @@
 
 
       <br>
-      <mat-form-field>
+      <mat-form-field class="formflds">
         <mat-select matNativeControl formControlName="cities" placeholder="City" required>
 
           <mat-option *ngFor="let city of cities" value="{{city}}">{{city}}</mat-option>
 
         </mat-select>
       </mat-form-field>
-
-
-
+      <br>
+      <br>
       <button class="btn" mat-raised-button type="submit">Submit</button>
     </form>
 
   </div>
+  <br>
+  <br>
+  <br>
 </div>

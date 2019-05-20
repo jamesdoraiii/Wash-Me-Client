@@ -1,32 +1,58 @@
-<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+<div class="bg">
+  <div class="jumbotron">
 
-  <div fxFlex="70%">
-    <mat-card>
+    <h1 class="hi"> Hi, {{userProfile.fName}}! </h1>
+    <h1 class="blerb"> Here is your Detailer Profile. </h1>
 
-      <h1> Your Detailer Profile </h1>
 
-      <h3>Examples of Your Work</h3>
-      <a mat-raised-button href= "{{userProfile.linkToImgur}}" target = "_blank">View Imgur</a>
+  </div>
 
-      <h3>Services Offered</h3>
-      <p>{{userProfile.servicesOffered}}</p>
 
-      <h3>Availability</h3>
-      <p>{{userProfile.availability}}</p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
 
-      <h3>Pricing Information</h3>
-      <p>{{userProfile.pricingInformation}}</p>
+    <div fxFlex="40%">
+      <mat-card class="card">
 
-      <h3>Your Profile Currently Appears in searches for:</h3>
-      <p>{{ userProfile.cities }}, {{ userProfile.state }} </p>
+        <h3>Examples of Your Work</h3>
+        <a class="imgrBtn" mat-raised-button href="{{userProfile.linkToImgur}}" target="_blank">View Imgur</a>
 
-      <button mat-raised-button color="primary" (click)="updateProfile()">Edit Profile</button>
+        <h3>Services Offered</h3>
+        <p>{{userProfile.servicesOffered}}</p>
 
-      <button mat-raised-button color="primary" (click)="deleteProfile()">Delete Profile</button>
+        <h3>Availability</h3>
+        <p>{{userProfile.availability}}</p>
 
-      <app-display-reviews *ngIf="userProfile" [detailer]="userProfile" [reviewInput]="false"></app-display-reviews>
+        <h3>Pricing Information</h3>
+        <p>{{userProfile.pricingInformation}}</p>
 
-    </mat-card>
+        <h3>Your Profile Currently Appears in searches for:</h3>
+        <p>{{ userProfile.cities }}, {{ userProfile.state }} </p>
+        <br>
+        <button mat-raised-button class="btn" (click)="updateProfile()">Edit Profile</button>
 
+        <button mat-raised-button class="btn" (click)="deleteProfile()">Delete Profile</button>
+        <br>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+
+
+        <div class="reviews">
+          <app-display-reviews *ngIf="userProfile" [detailer]="userProfile" [reviewInput]="false"></app-display-reviews>
+        </div>
+
+
+      </mat-card>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
   </div>
 </div>

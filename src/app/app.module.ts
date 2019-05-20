@@ -19,7 +19,6 @@ import { YourDetailerProfileSetupComponent } from './screens/your-detailer-profi
 import { YourDetailerProfileViewComponent } from './screens/your-detailer-profile/your-detailer-profile-view/your-detailer-profile-view.component';
 import { DisplayContactsMadeComponent } from './screens/your-user-profile/display-contacts-made/display-contacts-made.component';
 import { YourUserProfileBaseComponent } from './screens/your-user-profile/your-user-profile-base/your-user-profile-base.component';
-import { ContactFormComponent } from './shared-components/contact-form/contact-form.component';
 import { DetailerProfileSetupFormComponent } from './shared-components/detailer-profile-setup-form/detailer-profile-setup-form.component';
 import { DisplayDetailerProfileComponent } from './shared-components/display-detailer-profile/display-detailer-profile.component';
 import { DisplayReviewsComponent } from './shared-components/display-reviews/display-reviews.component';
@@ -80,7 +79,6 @@ import { ViewDetailerProfileOnUserPageComponent } from './screens/your-user-prof
     YourDetailerProfileViewComponent,
     DisplayContactsMadeComponent,
     YourUserProfileBaseComponent,
-    ContactFormComponent,
     DetailerProfileSetupFormComponent,
     DisplayDetailerProfileComponent,
     DisplayReviewsComponent,

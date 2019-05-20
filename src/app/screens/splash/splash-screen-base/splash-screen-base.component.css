@@ -32,7 +32,11 @@ margin-right: 2em;
 
 .jumbotron2{
     color: black;
-    padding: 2%;
+    /* padding: 2%; */
+}
+
+.largeLogo {
+    margin-bottom: 2em;
 }
 
 .jumSmlBox{

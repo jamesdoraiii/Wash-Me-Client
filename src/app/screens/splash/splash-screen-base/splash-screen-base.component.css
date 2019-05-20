@@ -40,6 +40,8 @@ margin-right: 2em;
     margin-left: 9%;
 }
 .btn {
+    width: 180px;
+    height: 35px;
     color:  rgb(251, 240, 87) !important;
     background-color: black;
 }
@@ -110,9 +112,23 @@ margin-right: 2em;
 
 }
 
+#header-li{
+    text-decoration: underline;
+    text-decoration-color: rgb(251, 240, 87);
+    margin-left: 37%;
+    margin-right: 63%
+}
+
+#header-su{
+    text-decoration: underline;
+    text-decoration-color: rgb(251, 240, 87);
+    margin-left: 35%;
+    margin-right: 65%
+}
+
 .liformh1{
-    margin-left: 45%;
-    margin-right: 65%;
+    margin-left: 40%;
+    margin-right: 70%;
 }
 
 .suformh1{
@@ -125,13 +141,13 @@ width: 100%;
 }
 
 .libtns {
-    margin-left: 45%;
-    margin-right: 65%; 
+    margin-left: 26%;
+    margin-right: 74%; 
 }
 
 .subtns {
-    margin-left: 45%;
-    margin-right: 65%;   
+    margin-left: 26%;
+    margin-right: 74%;   
 }
 
 /* 

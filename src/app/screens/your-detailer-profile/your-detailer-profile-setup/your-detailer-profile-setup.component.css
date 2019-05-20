@@ -4,7 +4,14 @@ background-image: url(../../../../assets/insideCar1.jpg);
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-height: 175vh;
+height: 100%;
+}
+
+.signup h2{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(251, 240, 87);
 }
 
 .signup {
@@ -22,7 +29,12 @@ height: 175vh;
 .btn {
     color:  rgb(251, 240, 87) !important;
     background-color: black;
+    width: 180px;
+    height: 35px;
+    margin-left: 10%;
+    margin-right: 90%;
 }
+
 .btn:hover {
     color:  rgb(251, 240, 87)  !important;
     background: black;;
@@ -30,6 +42,11 @@ height: 175vh;
     -webkit-box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
     -moz-box-shadow: 0px 5px 60px -2px  rgb(251, 240, 87) ;
 
+ }
+
+ .formflds{
+    margin-left: 10%;
+    margin-right: 90%;
  }
 
  

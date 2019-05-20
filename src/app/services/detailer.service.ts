@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { APIURL } from '../../environments/environment.prod'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,7 +14,7 @@ const httpOptions = {
   providedIn: "root"
 })
 export class DetailerService {
-  private dbUrl = "http://localhost:3000/detailer";
+  private dbUrl = `${APIURL}/detailer`;
 
   constructor(private http: HttpClient) {}
 

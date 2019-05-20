@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { APIURL } from '../../environments/environment.prod'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,7 +16,7 @@ const httpOptions = {
 
 export class UserService {
 
-  private dbUrl = "http://localhost:3000/user"
+  private dbUrl = `${APIURL}/user`
 
   constructor(private http: HttpClient) { }
 

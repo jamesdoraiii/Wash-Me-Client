@@ -37,7 +37,7 @@ export class DetailerSearchBaseComponent implements OnInit {
   receiveProfileView(detailer) {
     this.status = 'profile';
     this.detailerView = detailer;
-
+//test
   }
 
   receiveBack(){

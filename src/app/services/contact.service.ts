@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { APIURL } from '../../environments/environment.prod'
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 
 export class ContactService {
 
-    private dbUrl = "http://localhost:3000/contact";
+    private dbUrl = `${APIURL}/contact`;
 
     constructor(private http: HttpClient) { }
 

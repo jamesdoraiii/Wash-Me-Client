@@ -1,12 +1,13 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { APIURL } from '../../environments/environment.prod'
 
 @Injectable({
   providedIn: "root"
 })
 export class ReviewService {
-  private dbUrl = "http://localhost:3000/review";
+  private dbUrl = `${APIURL}/review`;
 
   constructor(private http: HttpClient) { }
 

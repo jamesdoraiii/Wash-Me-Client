@@ -12,7 +12,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod",
-    "start": "serve -s dist/WashMeClient"
+    "start": "serve -s dist/wash-me-material-client"
   },
   "private": true,
   "dependencies": {

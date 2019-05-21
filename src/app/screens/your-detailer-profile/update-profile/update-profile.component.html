@@ -1,29 +1,29 @@
 <div class="pagecontent-update">
   <div class="update">
 
-    <h3>Update the information in your detailer profile.</h3>
+    <h2 id="form-text">Update the information in your detailer profile.</h2>
 
     <form [formGroup]="detailerSetup" (ngSubmit)="onSubmit()">
 
-      <mat-form-field>
+      <mat-form-field class="input-fields">
         <input matInput placeholder="Link To Your Imgur" formControlName="linkToImgur" required>
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field class="input-fields">
         <textarea matInput placeholder="Your Services" formControlName="servicesOffered" required></textarea>
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field class="input-fields">
         <textarea matInput placeholder="Pricing Information" formControlName="pricingInformation" required></textarea>
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field class="input-fields">
         <textarea matInput placeholder="Availability" formControlName="availability" required></textarea>
       </mat-form-field>
 
 
 
-      <mat-form-field>
+      <mat-form-field class="input-fields">
         <mat-select placeholder="Will Travel?" formControlName="willTravel" required>
           <mat-option value=" true">Yes</mat-option>
           <mat-option value="false">No</mat-option>
@@ -33,7 +33,7 @@
 
       <br>
 
-      <mat-form-field>
+      <mat-form-field class="input-fields">
         <mat-select matNativeControl formControlName="state" placeholder="State" required>
 
           <mat-option *ngFor="let state of states" value="{{state}}" (click)="getCities()">{{state}}</mat-option>
@@ -44,7 +44,7 @@
 
       <br>
 
-      <mat-form-field>
+      <mat-form-field class="input-fields">
         <mat-select matNativeControl formControlName="cities" placeholder="City" required>
 
           <mat-option *ngFor="let city of cities" value="{{city}}">{{city}}</mat-option>

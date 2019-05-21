@@ -51,6 +51,11 @@
         text-decoration: underline;
         text-decoration-color: rgb(251, 240, 87);
     }
+
+    .cardContainer p{
+        height: 20vh;
+        overflow-y: scroll;
+    }
     
     .btn {
         color:  rgb(251, 240, 87) !important;

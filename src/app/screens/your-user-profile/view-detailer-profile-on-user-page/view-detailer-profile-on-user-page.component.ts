@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DetailerService } from '../../../services/detailer.service';
 import { ContactService } from '../../../services/contact.service';
 
@@ -13,18 +13,24 @@ export class ViewDetailerProfileOnUserPageComponent implements OnInit {
 
   detailerView: any;
 
-  constructor(private detailerService : DetailerService, private contactService: ContactService) { }
+  constructor(private detailerService: DetailerService, private contactService: ContactService) { }
 
   ngOnInit() {
     console.log(this.detailerId);
     this.detailerService.findSpecificDetailerUserPage(this.detailerId).subscribe(res => {
-      console.log("This is a response",res)
+      console.log("This is a response", res)
       this.detailerView = res;
     })
   }
 
-  contact(){
-    
+  @Output() backEvent = new EventEmitter<any>();
+
+  back() {
+    this.backEvent.emit()
+  }
+
+  contact() {
+
     var contact = {
       detailerId: this.detailerView.id,
       detailerFname: this.detailerView.fName,
@@ -34,7 +40,7 @@ export class ViewDetailerProfileOnUserPageComponent implements OnInit {
       console.log(res);
     })
 
-    window.open('mailto:'+this.detailerView.emailAddress+'?subject=Wash Me Detailing Request');
+    window.open('mailto:' + this.detailerView.emailAddress + '?subject=Wash Me Detailing Request');
   }
 
 }

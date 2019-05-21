@@ -1,16 +1,19 @@
 <div class="bg">
   <div class="jumbotron">
-    <br>
+    <button class="bbtn" mat-raised-button (click)="back()">
+      <h1> Back </h1>
+    </button>
+
     <h1 class="hi"> Checkout {{detailerView.fName}}'s profile! </h1>
     <h2 class="blerb">Maybe you will find the detailer of your dreams!</h2>
 
   </div>
 
   <br>
-  <button class="btn" mat-raised-button (click)="back()" *ngIf="status == 'profile'">Back to Your User Page</button>
-  <br>
-  <br>
 
+  <br>
+  <br>
+  <!-- *ngIf="status == 'profile'" -->
 
 
 
@@ -20,16 +23,16 @@
 
       <mat-card class="card">
 
-        <h3>View Some Examples of {{detailerView.fName}}'s Work</h3>
+        <h2>View Some Examples of {{detailerView.fName}}'s Work</h2>
         <a class="imgrBtn" mat-raised-button href="{{detailerView.linkToImgur}}" target="_blank">View Imgur</a>
 
-        <h3>Services Offered</h3>
+        <h2>Services Offered</h2>
         <p>{{detailerView.servicesOffered}}</p>
 
-        <h3>Availability</h3>
+        <h2>Availability</h2>
         <p>{{detailerView.availability}}</p>
 
-        <h3>Pricing Information</h3>
+        <h2>Pricing Information</h2>
         <p>{{detailerView.pricingInformation}}</p>
         <br>
 

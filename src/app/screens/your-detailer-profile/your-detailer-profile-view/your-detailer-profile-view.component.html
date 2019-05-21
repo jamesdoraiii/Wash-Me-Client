@@ -18,19 +18,19 @@
     <div fxFlex="40%">
       <mat-card class="card">
 
-        <h3>Examples of Your Work</h3>
+        <h2>Examples of Your Work</h2>
         <a class="imgrBtn" mat-raised-button href="{{userProfile.linkToImgur}}" target="_blank">View Imgur</a>
 
-        <h3>Services Offered</h3>
+        <h2>Services Offered</h2>
         <p>{{userProfile.servicesOffered}}</p>
 
-        <h3>Availability</h3>
+        <h2>Availability</h2>
         <p>{{userProfile.availability}}</p>
 
-        <h3>Pricing Information</h3>
+        <h2>Pricing Information</h2>
         <p>{{userProfile.pricingInformation}}</p>
 
-        <h3>Your Profile Currently Appears in searches for:</h3>
+        <h2>Your Profile Currently Appears in searches for:</h2>
         <p>{{ userProfile.cities }}, {{ userProfile.state }} </p>
         <br>
         <button mat-raised-button class="btn" (click)="updateProfile()">Edit Profile</button>

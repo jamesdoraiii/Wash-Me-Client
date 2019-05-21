@@ -1,5 +1,5 @@
 .bg { 
-    background-image: url(../../../../assets/car1.jpg);
+    background-image: url(../../../../assets/insideCar3.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,8 +47,16 @@ font-family: Arial, Helvetica, sans-serif;
 
   }
 
-  
+  .card {
+    background-color: rgba(255, 255, 255, 0.678);
+  }
 
+  
+h1 {
+  color:rgba(255, 255, 255, 0.808);
+  text-decoration: underline;
+  text-decoration-color: rgb(251, 240, 87);
+}
 ul{
     list-style: none;
 }

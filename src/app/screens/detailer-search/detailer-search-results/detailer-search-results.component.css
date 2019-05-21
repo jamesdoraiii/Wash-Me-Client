@@ -41,7 +41,7 @@
 
     }
     .cardContainer{
-        width:45%; 
+        width:42%; 
         display: inline-block;
         margin: auto;
         padding: 2em;
@@ -53,7 +53,7 @@
     }
 
     .cardContainer p{
-        height: 20vh;
+        height: 15vh;
         overflow-y: scroll;
     }
     

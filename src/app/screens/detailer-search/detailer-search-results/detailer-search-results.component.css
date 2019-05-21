@@ -1,6 +1,6 @@
 .pagecontent-results{
 
-    background-image: url(../../../../assets/insideCar1.jpg);
+    background-image: url(../../../../assets/insideCar5.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -50,6 +50,11 @@
     .cardContainer h1{
         text-decoration: underline;
         text-decoration-color: rgb(251, 240, 87);
+    }
+
+    .cardContainer p{
+        height: 20vh;
+        overflow-y: scroll;
     }
     
     .btn {

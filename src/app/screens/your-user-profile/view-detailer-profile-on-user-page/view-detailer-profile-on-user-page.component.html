@@ -36,7 +36,7 @@
         <br>
         <mat-divider></mat-divider>
         <div class="reviews">
-          <app-display-reviews [detailer]="detailerView" [reviewInput]="true"></app-display-reviews>
+          <app-display-reviews *ngIf="detailerView"  [detailer]="detailerView" [reviewInput]="true"></app-display-reviews>
         </div>
       </mat-card>
       <br>

@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    min-height: 100vh;
     }
 
 
@@ -31,7 +32,6 @@
 
     .results {
         background-color: rgba(255, 255, 255, 0.637);
-        position: relative;
         top:5%;
         margin-left: auto;
         margin-right: auto;
@@ -41,7 +41,7 @@
 
     }
     .cardContainer{
-        width:35%; 
+        width:45%; 
         display: inline-block;
         margin: auto;
         padding: 2em;
@@ -60,8 +60,8 @@
     .btn {
         color:  rgb(251, 240, 87) !important;
         background-color: black;
-        margin:5px;
-        width:50%;
+        margin: auto;
+        width:100%;
         text-align: center;
     }
     .btn:hover {

@@ -86,6 +86,7 @@ export class SplashScreenBaseComponent implements OnInit {
       window.localStorage.setItem('detailerStatus', res.user.isDetailer);
       this.messageEvent.emit(window.localStorage.getItem('token'));
       window.localStorage.setItem('userId', res.user.id);
+      window.localStorage.setItem('isAdmin', res.user.isAdmin);
     })
 
 
@@ -108,6 +109,7 @@ export class SplashScreenBaseComponent implements OnInit {
       window.localStorage.setItem('adminStatus', res.user.isAdmin);
       this.messageEvent.emit(window.localStorage.getItem('token'));
       window.localStorage.setItem('userId', res.user.id);
+      window.localStorage.setItem('isAdmin', res.user.isAdmin);
 
     })
   }

@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ReviewService } from '../../services/review.service'
 import { FormGroup, FormControl } from '@angular/forms';
-import { findSafariExecutable } from 'selenium-webdriver/safari';
 
 @Component({
   selector: "app-display-reviews",
@@ -37,7 +36,7 @@ export class DisplayReviewsComponent implements OnInit {
       this.reviews = res;
     })
     this.reviewInputStatus = this.reviewInput;
-    this.adminStatus = localStorage.getItem('adminStatus')
+    this.adminStatus = localStorage.getItem('isAdmin')
     console.log(this.reviewInputStatus)
   }
 
